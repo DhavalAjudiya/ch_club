@@ -40,7 +40,7 @@ class _SplashPageState extends State<SplashPage> {
                 ),
                 Image.asset(
                   AssetsPath.main,
-                  width: SizeUtils.horizontalBlockSize * 45,
+                  width: SizeUtils.horizontalBlockSize * 35,
                 ),
                 SizedBox(
                   height: SizeUtils.horizontalBlockSize * 5,

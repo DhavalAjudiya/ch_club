@@ -6,17 +6,23 @@ class AppString {
   static ValueNotifier<int> bottomIndex = ValueNotifier(0);
 
   ///Validator
-  static const String emailRegExp = r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
+  static const String emailRegExp =
+      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
   static const String plzEnterEmail = 'Please enter email';
   static const String enterValidEmail = 'Please enter valid email';
   static const String emptyQuote = '';
   static const String plzEnterPWD = 'Please enter Password';
-  static const String pWDRegExp = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-  static const String pWDMustBeUpperLower = 'Password must be Uppercase,Lowercase,digit and specialCharacters';
+  static const String pWDRegExp =
+      r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+  static const String pWDMustBeUpperLower =
+      'Password must be Uppercase,Lowercase,digit and specialCharacters';
 
   static const String cashHub = 'Cash Hub';
   static const String ch = 'CH Loan Adviser';
-  static const String subCh = 'You can get all the detailed information \nabout how to get a personal loan.';
+  static const String adharCARD = 'Aadhar Card Loan';
+  static const String instantLoan = 'Instant Loan';
+  static const String subCh =
+      'You can get all the detailed information \nabout how to get a personal loan.';
   static const String loanDetail = 'Loan Details';
   static const String selectState = 'Select State';
   static const String holiday = 'Holiday List';
@@ -41,7 +47,8 @@ class AppString {
   static const hoeDo = "How do banks decide on the maximum loan amount";
   static const whatAre = "What are the common rates For Loan";
   static const key = "Key documents required when applying for a loan";
-  static const difference = "Difference between part payment, prepayment and preclosure";
+  static const difference =
+      "Difference between part payment, prepayment and preclosure";
   static const loan = "Loan approval process";
   static const credit = "Credit report and score";
   static const howIS = "How is having a higher credit score beneficial";
@@ -89,14 +96,19 @@ class AppString {
   static const international = "International Workers Portal";
   static const eKyc = "EKYC Portal";
 
-  static const establishmentLink = "https://registration.  shramsuvidha.gov.in/user/login";
-  static const kycLink = " https://unifiedportal-mem.epfindia.gov.in / memberinterface /";
-  static const umangLink = " https://unifiedportal-mem.epfindia.gov.in / memberinterface /";
+  static const establishmentLink =
+      "https://registration.  shramsuvidha.gov.in/user/login";
+  static const kycLink =
+      " https://unifiedportal-mem.epfindia.gov.in / memberinterface /";
+  static const umangLink =
+      " https://unifiedportal-mem.epfindia.gov.in / memberinterface /";
   static const ecrLink = "https://unifiedportal-emp.epfindia.gov.in/epfo/";
   static const onlineLink = "https://epfindia.gov.in/site_en/index.php";
-  static const eLink = " https://passbook.epfindia.gov.in / Member PassBook / Login.jsp";
+  static const eLink =
+      " https://passbook.epfindia.gov.in / Member PassBook / Login.jsp";
   static const sharamLink = "https://return.shramsuvidha.gov.in/user/login";
-  static const personalLink = " https://mis.epfindia.gov.in / Pension PaymentEnquiry  /enquiry.jsp";
+  static const personalLink =
+      " https://mis.epfindia.gov.in / Pension PaymentEnquiry  /enquiry.jsp";
   static const internationalLink = " https://iwi.mpfindia.gov.in/iw/";
   static const eKycLink = " https://iwu.epfindia.gov.in/eKYC/";
 
@@ -155,7 +167,8 @@ class AppString {
   static const aadharLoan16 = "What is e-Aadhar about UIDAI?";
   static const aadharLoan17 = "What is a masked base?";
   static const aadharLoan18 = "What are root devices?";
-  static const aadharLoan19 = "Is the physical copy of Aadhar e-Aadhar equally valid?";
+  static const aadharLoan19 =
+      "Is the physical copy of Aadhar e-Aadhar equally valid?";
   static const aadharLoan1 =
       "Base number  A 12-digit random number issued by the UIDAI to all residents of India after completing the verification process laid down by the authority.  is .  Any person of any age who is a resident of India can voluntarily enroll for obtaining Aadhaar number without any gender distinction.  A person seeking enrollment has to provide the minimum demographic and biometric information during the enrollment process, which is completely cost-free.  A person has to enroll for Aadhaar only once and is distinguished through the D-duplication system, only one Aadhaar is created after D-duplication.  Aadhaar number is authenticated by a cost-effective online method.  It is unique and strong enough to eliminate duplicate and bogus identities and can be used as a basic / primary identity to promote effective delivery, transparency and good governance of various government welfare schemes and services.  It is the only program of its kind across the world in which people of state of the art digital and online identity are being provided free of cost to the people at large for the service delivery work in the country. Sambhavna has the potential to change. Aadhaar number is also devoid of any kind of intelligence and it is not an external outline of people on the basis of caste, religion, income, health and geography.  Aadhaar number is proof of identity, however it does not confer citizenship and domicile rights to Aadhaar number holders. Social and financial inclusion, public sector distribution reforms, fiscal budget management to enhance convenience and provide hassle free governance to the people.  Aadhaar is a strategic policy tool for promotion.  The Aadhaar card can be used as a permanent financial address and to facilitate the financial inclusion of the deprived and weaker sections of the society and hence it is a tool for distributive justice and equality.  Aadhaar Identification platform is one of the major pillars of \"Digital India\" in which a unique identity is provided to every resident of the country.  Base number of  Using this enables the Government of India to reach out to the residents of the country directly for the delivery of various subsidies, benefits and services.";
   static const aadharLoan2 =
@@ -168,16 +181,20 @@ class AppString {
       "Not a valid address proof?  With the help of the validation letter of address sent by UIDAI, residents can still get their address updated in their Aadhaar.";
   static const aadharLoan6 =
       "The Unique Identification Authority of India (UIDAI) is a statutory authority established by the Government of India under the provisions of the Aadhaar (Targeted Delivery of Financial and Other Subsidies, Benefits and Services) Act, 2016 (\"Aadhaar Act, 2016\"), Electronics and Information  Under the Ministry of Technology (MEITY) dated 12 July 2016. Prior to its establishment as a statutory authority, UIDAI was the erstwhile Planning Commission (now NITI Aayog) Gazette Notification no.  A-43011/02/2009 - Admin-1 was functioning as an attached office on 28th January, 2009.  Later, on 12 September 2015, UIDAI was associated with the then Department of Information and Technology (DeitY) by the government by amending the Government Work Allocation Rules. UIDAI was established with a unique identity number called \"Aadhaar\" to all residents of India.  (UID) to provide for (a) elimination of dual and bogus identification and (b) to authenticate and certify it easily and economically. First UID Number A resident of Maharashtra, Nandurbar was released on 29 September 2010.  The Authority has so far provided Aadhaar numbers to more than 120 crore Indian residents. Under the Aadhaar Act 2016, UIDAI Aadhaar enrollment and certification, including the management and operation of all stages of the Aadhaar life cycle, including issuance of Aadhaar numbers and  Responsible for developing policy, procedure and system for conducting authentication and ensuring security of identity information and authentication records. To learn more about UIDAI, please refer to the organizational structure sections of the website";
-  static const aadharLoan7 = "E-Aadhaar is a password protected electronic copy of Aadhaar, digitally signed by a competent officer of UIDAI.";
+  static const aadharLoan7 =
+      "E-Aadhaar is a password protected electronic copy of Aadhaar, digitally signed by a competent officer of UIDAI.";
   static const aadharLoan8 =
       "As per the Aadhaar Act, E-Aadhaar is as valid as a physical copy of Aadhaar for all purposes.  For UIDAI circular on validity of e-Aadhaar, please visit e-Aadhaar.";
-  static const aadharLoan9 = "The Mask Aadhaar option allows you to mask your Aadhaar number in your downloaded Aadhaar.";
+  static const aadharLoan9 =
+      "The Mask Aadhaar option allows you to mask your Aadhaar number in your downloaded Aadhaar.";
 
   /// pan
   static const panLoan11 = "What is PAN?";
   static const panLoan12 = "Who can apply for PAN?";
-  static const panLoan13 = "Who can apply on behalf of minor, insane, foolish, retarded, deas and wards of the court?";
-  static const panLoan14 = "Do I need to apply for a new PAN when I move from one city to another?";
+  static const panLoan13 =
+      "Who can apply on behalf of minor, insane, foolish, retarded, deas and wards of the court?";
+  static const panLoan14 =
+      "Do I need to apply for a new PAN when I move from one city to another?";
   static const panLoan15 = "Can I get more than one PAN?";
   static const panLoan16 = "What should I do if I have more than one PAN?";
   static const panLoan17 =

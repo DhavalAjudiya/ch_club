@@ -37,22 +37,40 @@ class HomePage extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    headerContainer(
-                      color: AppColor.blueContainer,
-                      image: AssetsPath.adhar,
-                      text: AppString.adharCardLoan,
-                      isChange: true,
+                    GestureDetector(
+                      onTap: () {
+                        Navigation.pushNamed(Routes.adharCard);
+                      },
+                      child: Image.asset(
+                        AssetsPath.adharLoan,
+                        width: SizeUtils.horizontalBlockSize * 45,
+                      ),
                     ),
-                    headerContainer(
-                      color: AppColor.orangContainer,
-                      image: AssetsPath.intsLoan,
-                      text: AppString.instanstLoan,
-                      isChange: true,
+                    GestureDetector(
+                      onTap: () {
+                        Navigation.pushNamed(Routes.instantLoan);
+                      },
+                      child: Image.asset(
+                        AssetsPath.instantLoan,
+                        width: SizeUtils.horizontalBlockSize * 45,
+                      ),
                     ),
+                    // headerContainer(
+                    //   color: AppColor.blueContainer,
+                    //   image: AssetsPath.adhar,
+                    //   text: AppString.adharCardLoan,
+                    //   isChange: true,
+                    // ),
+                    // headerContainer(
+                    //   color: AppColor.orangContainer,
+                    //   image: AssetsPath.intsLoan,
+                    //   text: AppString.instanstLoan,
+                    //   isChange: true,
+                    // ),
                   ],
                 ),
                 SizedBox(
-                  height: SizeUtils.horizontalBlockSize * 5,
+                  height: SizeUtils.horizontalBlockSize * 7,
                 ),
                 typeContainer(
                   width: SizeUtils.horizontalBlockSize * 6.5,
@@ -171,7 +189,8 @@ class HomePage extends StatelessWidget {
         onTap: onTap,
         child: Container(
           height: SizeUtils.verticalBlockSize * 7,
-          decoration: BoxDecoration(gradient: gradient, borderRadius: BorderRadius.circular(8)),
+          decoration: BoxDecoration(
+              gradient: gradient, borderRadius: BorderRadius.circular(8)),
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: SizeUtils.horizontalBlockSize * 4,
