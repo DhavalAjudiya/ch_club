@@ -33,7 +33,7 @@ class CHCLUB extends StatelessWidget {
         disabledColor: Colors.transparent,
         // fontFamily: AssetsPath.robotoFonts,
       ),
-      initialRoute: Routes.homePage,
+      initialRoute: Routes.splashPage,
       getPages: Routes.routes,
       builder: (context, child) {
         SizeUtils().init(context);

@@ -15,4 +15,5 @@ class AssetsPath {
   static const String loanGuid = '${appIcons}loan_guid.png';
   static const String location = '${appIcons}location.png';
   static const String personal = '${appIcons}personal.png';
+  static const String main = '${appIcons}main_imgs.png';
 }

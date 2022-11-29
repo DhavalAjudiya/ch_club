@@ -1,5 +1,7 @@
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/EPS_service/eps.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/EPS_service/eps_details.dart';
+import 'package:ch_hub/Moduals/dashbord/home/prestetion/bank_holiday/bank_holiday.dart';
+import 'package:ch_hub/Moduals/dashbord/home/prestetion/bank_holiday/holiday_info.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/home_page.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_guid/loan_gide.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_guid/loan_guide_details.dart';
@@ -18,6 +20,8 @@ import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_type/loan_type.dart
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_type/pan_loan/pan_loan.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_type/pan_loan/pan_loan_detailes.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_type/personal_loan.dart';
+import 'package:ch_hub/Moduals/dashbord/splashpage.dart';
+import 'package:ch_hub/Moduals/dashbord/start.dart';
 import 'package:get/get.dart';
 
 mixin Routes {
@@ -44,8 +48,17 @@ mixin Routes {
   static const String creditCardDetails = "/creditCardDetails";
   static const String bikePage = "/bikePage";
   static const String bikeLoanDetail = "/bikeLoanDetail";
+  static const String bankHolidayPage = "/bankHolidayPage";
+  static const String holidayInfoPage = "/holidayInfoPage";
+  static const String startPage = "/startPage";
+  static const String splashPage = "/splashPage";
 
   static List<GetPage<dynamic>> routes = [
+    GetPage<dynamic>(
+      name: splashPage,
+      page: () => SplashPage(),
+      transition: defaultTransition,
+    ),
     GetPage<dynamic>(
       name: homePage,
       page: () => HomePage(),
@@ -144,6 +157,21 @@ mixin Routes {
     GetPage<dynamic>(
       name: bikeLoanDetail,
       page: () => BikeLoanDetails(),
+      transition: defaultTransition,
+    ),
+    GetPage<dynamic>(
+      name: bankHolidayPage,
+      page: () => BankHolidayPage(),
+      transition: defaultTransition,
+    ),
+    GetPage<dynamic>(
+      name: holidayInfoPage,
+      page: () => HolidayInfoPage(),
+      transition: defaultTransition,
+    ),
+    GetPage<dynamic>(
+      name: startPage,
+      page: () => StartPage(),
       transition: defaultTransition,
     ),
   ];

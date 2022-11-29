@@ -88,6 +88,9 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 typeContainer(
+                  onTap: () {
+                    Navigation.pushNamed(Routes.bankHolidayPage);
+                  },
                   width: SizeUtils.horizontalBlockSize * 11,
                   image: AssetsPath.beach,
                   text: AppString.bankHoliday,
@@ -96,6 +99,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
                 typeContainer(
+                  onTap: () {},
                   width: SizeUtils.horizontalBlockSize * 7,
                   image: AssetsPath.bank,
                   text: AppString.bankInfo,
@@ -166,9 +170,8 @@ class HomePage extends StatelessWidget {
       child: GestureDetector(
         onTap: onTap,
         child: Container(
-          height: SizeUtils.verticalBlockSize * 6,
-          decoration: BoxDecoration(
-              gradient: gradient, borderRadius: BorderRadius.circular(8)),
+          height: SizeUtils.verticalBlockSize * 7,
+          decoration: BoxDecoration(gradient: gradient, borderRadius: BorderRadius.circular(8)),
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: SizeUtils.horizontalBlockSize * 4,
