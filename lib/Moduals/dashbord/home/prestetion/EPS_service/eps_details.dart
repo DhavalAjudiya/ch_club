@@ -1,4 +1,5 @@
 import 'package:bot_toast/bot_toast.dart';
+import 'package:ch_hub/Ads_helper/banner_ads_widget.dart';
 import 'package:ch_hub/helper/app_snackbar.dart';
 import 'package:ch_hub/helper/toast_helper.dart';
 import 'package:ch_hub/res/app_colors.dart';
@@ -52,8 +53,15 @@ class EPSServiceDetails extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: SizeUtils.verticalBlockSize * 10,
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: SizeUtils.horizontalBlockSize * 5,
+                    bottom: SizeUtils.horizontalBlockSize * 7,
+                  ),
+                  child: SizedBox(
+                    height: SizeUtils.verticalBlockSize * 8,
+                    child: BannerAds(),
+                  ),
                 ),
                 AppText(
                   id["id"] == 1
@@ -112,10 +120,13 @@ class EPSServiceDetails extends StatelessWidget {
                                                 : id["id"] == 7
                                                     ? AppString.sharamsuvidha
                                                     : id["id"] == 8
-                                                        ? AppString.personalPortal
+                                                        ? AppString
+                                                            .personalPortal
                                                         : id["id"] == 9
-                                                            ? AppString.internationalWorkers
-                                                            : AppString.eKycPortal,
+                                                            ? AppString
+                                                                .internationalWorkers
+                                                            : AppString
+                                                                .eKycPortal,
                         fontSize: SizeUtils.fSize_12(),
                         maxLines: 80,
                         overflow: TextOverflow.ellipsis,
@@ -158,10 +169,13 @@ class EPSServiceDetails extends StatelessWidget {
                                                     : id["id"] == 7
                                                         ? AppString.sharamLink
                                                         : id["id"] == 8
-                                                            ? AppString.personalLink
+                                                            ? AppString
+                                                                .personalLink
                                                             : id["id"] == 9
-                                                                ? AppString.internationalLink
-                                                                : AppString.eKycLink,
+                                                                ? AppString
+                                                                    .internationalLink
+                                                                : AppString
+                                                                    .eKycLink,
                             fontSize: SizeUtils.fSize_14(),
                             maxLines: 5,
                             overflow: TextOverflow.ellipsis,
@@ -182,7 +196,8 @@ class EPSServiceDetails extends StatelessWidget {
                               ),
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: SizeUtils.horizontalBlockSize * 12,
+                                  horizontal:
+                                      SizeUtils.horizontalBlockSize * 12,
                                   vertical: SizeUtils.horizontalBlockSize * 3,
                                 ),
                                 child: AppText(

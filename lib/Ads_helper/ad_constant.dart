@@ -16,7 +16,7 @@ class AdConstants {
   static bool isShowAdsOrNot = true;
 
   static String facebookBannerAdUnitId = "";
-  static bool isShowFacebookBannerAds = true;
+  static bool isShowFacebookBannerAds = false;
 
   ///
 

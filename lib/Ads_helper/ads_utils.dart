@@ -21,14 +21,18 @@ class AdsUtils {
 
   static bool isFacebookInterstitialAdLoaded = false;
   static bool isReadyToShowAd = true;
-  static bool firstAdShowDelayed = true;
+  // static bool firstAdShowDelayed = true;
   static int _numInterstitialLoadAttempts = 0;
   static bool isAdIsRewarded = false;
   static late RewardedAd rewardAd;
 
   static void loadInterstitialAds() async {
     if (AdConstants.isShowAdsOrNot == true) {
+      print("loadInterstitialAds--------1-${AdConstants.isShowAdsOrNot}");
       if (AdConstants.isShowFacebookInterstitialAds) {
+        print(
+            "loadInterstitialAds--------2-${AdConstants.isShowFacebookInterstitialAds}");
+
         loadFacebookAd("FacebookInterstitialAds");
       } else {
         loadAdMobAd("AdMobInterstitialAds");
@@ -117,15 +121,57 @@ class AdsUtils {
   // }
 
   static showInterstitialAds() {
-    if (!firstAdShowDelayed) {
+    if (isReadyToShowAd && adMobInterstitialAd != null) {
+      print(
+          "isReadyToShowAd--------ad----$isReadyToShowAd---$adMobInterstitialAd}");
+      adMobInterstitialAd!.fullScreenContentCallback =
+          FullScreenContentCallback(
+        onAdShowedFullScreenContent: (InterstitialAd ad) =>
+            print('ad onAdShowedFullScreenContent.'),
+        onAdDismissedFullScreenContent: (InterstitialAd ad) {
+          ad.dispose();
+          loadInterstitialAds();
+        },
+        onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
+          print('$ad onAdFailedToShowFullScreenContent: $error');
+          ad.dispose();
+          loadInterstitialAds();
+        },
+      );
+      adMobInterstitialAd!.show();
+      adMobInterstitialAd = null;
+      isReadyToShowAd = false;
+      // Future.delayed(
+      //   Duration(seconds: AdConstants.secondCoolDown),
+      //       () {
+      //     isReadyToShowAd = true;
+      //   },
+      // );
+    } else if (isReadyToShowAd && isFacebookInterstitialAdLoaded) {
+      print(
+          "isReadyToShowAd--------fb----$isReadyToShowAd---$isFacebookInterstitialAdLoaded}");
+
+      FacebookInterstitialAd.showInterstitialAd();
+      isReadyToShowAd = false;
+      // Future.delayed(
+      //   Duration(seconds: AdConstants.secondCoolDown),
+      //       () {
+      //     isReadyToShowAd = true;
+      //   },
+      // );
+    } else {}
+    /* if (!firstAdShowDelayed) {
       if (isReadyToShowAd && adMobInterstitialAd != null) {
-        adMobInterstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
-          onAdShowedFullScreenContent: (InterstitialAd ad) => print('ad onAdShowedFullScreenContent.'),
+        adMobInterstitialAd!.fullScreenContentCallback =
+            FullScreenContentCallback(
+          onAdShowedFullScreenContent: (InterstitialAd ad) =>
+              print('ad onAdShowedFullScreenContent.'),
           onAdDismissedFullScreenContent: (InterstitialAd ad) {
             ad.dispose();
             loadInterstitialAds();
           },
-          onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
+          onAdFailedToShowFullScreenContent:
+              (InterstitialAd ad, AdError error) {
             print('$ad onAdFailedToShowFullScreenContent: $error');
             ad.dispose();
             loadInterstitialAds();
@@ -150,6 +196,6 @@ class AdsUtils {
         //   },
         // );
       } else {}
-    } else {}
+    } else {}*/
   }
 }

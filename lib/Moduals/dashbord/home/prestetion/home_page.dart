@@ -1,5 +1,7 @@
 import 'dart:io';
 
+import 'package:ch_hub/Ads_helper/ads_utils.dart';
+import 'package:ch_hub/Ads_helper/full_banner_ads.dart';
 import 'package:ch_hub/res/app_colors.dart';
 import 'package:ch_hub/res/assets_path.dart';
 import 'package:ch_hub/res/strings_utils.dart';
@@ -22,7 +24,8 @@ class HomePage extends StatelessWidget {
         backgroundColor: AppColor.backgroundColor,
         body: SafeArea(
           child: Container(
-            decoration: const BoxDecoration(image: DecorationImage(image: AssetImage(AssetsPath.spalsh))),
+            decoration: const BoxDecoration(
+                image: DecorationImage(image: AssetImage(AssetsPath.spalsh))),
             child: Padding(
               padding: EdgeInsets.only(
                 left: SizeUtils.horizontalBlockSize * 3.5,
@@ -39,14 +42,20 @@ class HomePage extends StatelessWidget {
                       color: Colors.white,
                       fontSize: SizeUtils.fSize_25(),
                     ),
-                    SizedBox(
-                      height: SizeUtils.horizontalBlockSize * 60,
+                    Padding(
+                      padding: EdgeInsets.symmetric(
+                          vertical: SizeUtils.horizontalBlockSize * 4),
+                      child: SizedBox(
+                        height: SizeUtils.verticalBlockSize * 25,
+                        child: const Center(child: FullBannerAds()),
+                      ),
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         GestureDetector(
                           onTap: () {
+                            AdsUtils.showInterstitialAds();
                             Navigation.pushNamed(Routes.adharCard);
                           },
                           child: Image.asset(
@@ -56,6 +65,8 @@ class HomePage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
+                            AdsUtils.showInterstitialAds();
+
                             Navigation.pushNamed(Routes.instantLoan);
                           },
                           child: Image.asset(
@@ -88,11 +99,15 @@ class HomePage extends StatelessWidget {
                         colors: [AppColor.loanGuid, AppColor.loanGuid2],
                       ),
                       onTap: () {
+                        AdsUtils.showInterstitialAds();
+
                         Navigation.pushNamed(Routes.loanGuidePage);
                       },
                     ),
                     typeContainer(
                       onTap: () {
+                        AdsUtils.showInterstitialAds();
+
                         Navigation.pushNamed(Routes.epsService);
                       },
                       width: SizeUtils.horizontalBlockSize * 7,
@@ -104,6 +119,8 @@ class HomePage extends StatelessWidget {
                     ),
                     typeContainer(
                       onTap: () {
+                        AdsUtils.showInterstitialAds();
+
                         Navigation.pushNamed(Routes.loanTypePage);
                       },
                       width: SizeUtils.horizontalBlockSize * 8,
@@ -115,6 +132,8 @@ class HomePage extends StatelessWidget {
                     ),
                     typeContainer(
                       onTap: () {
+                        AdsUtils.showInterstitialAds();
+
                         Navigation.pushNamed(Routes.bankHolidayPage);
                       },
                       width: SizeUtils.horizontalBlockSize * 11,
@@ -134,12 +153,16 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     typeContainer(
+                      onTap: () {},
                       width: SizeUtils.horizontalBlockSize * 7,
                       image: AssetsPath.location,
                       text: AppString.nearBy,
                       gradient: const LinearGradient(
                         colors: [AppColor.near, AppColor.near2],
                       ),
+                    ),
+                    SizedBox(
+                      height: SizeUtils.verticalBlockSize * 2,
                     ),
                   ],
                 ),
@@ -199,7 +222,8 @@ class HomePage extends StatelessWidget {
         onTap: onTap,
         child: Container(
           height: SizeUtils.verticalBlockSize * 7,
-          decoration: BoxDecoration(gradient: gradient, borderRadius: BorderRadius.circular(8)),
+          decoration: BoxDecoration(
+              gradient: gradient, borderRadius: BorderRadius.circular(8)),
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: SizeUtils.horizontalBlockSize * 4,

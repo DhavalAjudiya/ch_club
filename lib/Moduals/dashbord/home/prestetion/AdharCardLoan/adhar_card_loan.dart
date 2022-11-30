@@ -1,3 +1,4 @@
+import 'package:ch_hub/Ads_helper/full_banner_ads.dart';
 import 'package:ch_hub/res/app_colors.dart';
 import 'package:ch_hub/res/assets_path.dart';
 import 'package:ch_hub/res/strings_utils.dart';
@@ -44,9 +45,17 @@ class AdharCardLoad extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: SizeUtils.verticalBlockSize * 35,
+                Padding(
+                  padding: EdgeInsets.symmetric(
+                      vertical: SizeUtils.horizontalBlockSize * 8),
+                  child: SizedBox(
+                    height: SizeUtils.verticalBlockSize * 25,
+                    child: const Center(child: FullBannerAds()),
+                  ),
                 ),
+                // SizedBox(
+                //   height: SizeUtils.verticalBlockSize * 35,
+                // ),
                 GestureDetector(
                   onTap: () {
                     Navigation.pushNamed(Routes.loanGuidePage);

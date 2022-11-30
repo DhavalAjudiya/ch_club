@@ -1,3 +1,4 @@
+import 'package:ch_hub/Ads_helper/banner_ads_widget.dart';
 import 'package:ch_hub/helper/toast_helper.dart';
 import 'package:ch_hub/res/app_colors.dart';
 import 'package:ch_hub/res/strings_utils.dart';
@@ -49,8 +50,15 @@ class InstantLoanDetails extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(
-                  height: SizeUtils.verticalBlockSize * 10,
+                Padding(
+                  padding: EdgeInsets.only(
+                    top: SizeUtils.horizontalBlockSize * 5,
+                    bottom: SizeUtils.horizontalBlockSize * 7,
+                  ),
+                  child: SizedBox(
+                    height: SizeUtils.verticalBlockSize * 8,
+                    child: BannerAds(),
+                  ),
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -85,8 +93,10 @@ class InstantLoanDetails extends StatelessWidget {
                                                     : id["id"] == 8
                                                         ? AppString.FAQ
                                                         : id["id"] == 9
-                                                            ? AppString.epfOnline
-                                                            : AppString.locateOffice,
+                                                            ? AppString
+                                                                .epfOnline
+                                                            : AppString
+                                                                .locateOffice,
                         fontSize: SizeUtils.fSize_12(),
                         maxLines: 80,
                         overflow: TextOverflow.ellipsis,
@@ -127,12 +137,15 @@ class InstantLoanDetails extends StatelessWidget {
                                                 : id["id"] == 6
                                                     ? AppString.helplineLink
                                                     : id["id"] == 7
-                                                        ? AppString.balance_smsLink
+                                                        ? AppString
+                                                            .balance_smsLink
                                                         : id["id"] == 8
                                                             ? AppString.FAQLink
                                                             : id["id"] == 9
-                                                                ? AppString.epfOnlineLink
-                                                                : AppString.locateOfficeLink,
+                                                                ? AppString
+                                                                    .epfOnlineLink
+                                                                : AppString
+                                                                    .locateOfficeLink,
                             fontSize: SizeUtils.fSize_14(),
                             maxLines: 5,
                             overflow: TextOverflow.ellipsis,
@@ -153,7 +166,8 @@ class InstantLoanDetails extends StatelessWidget {
                               ),
                               child: Padding(
                                 padding: EdgeInsets.symmetric(
-                                  horizontal: SizeUtils.horizontalBlockSize * 12,
+                                  horizontal:
+                                      SizeUtils.horizontalBlockSize * 12,
                                   vertical: SizeUtils.horizontalBlockSize * 3,
                                 ),
                                 child: AppText(

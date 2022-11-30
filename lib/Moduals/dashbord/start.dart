@@ -1,5 +1,6 @@
 import 'package:ch_hub/Ads_helper/ads_utils.dart';
 import 'package:ch_hub/Ads_helper/banner_ads_widget.dart';
+import 'package:ch_hub/Ads_helper/full_banner_ads.dart';
 import 'package:ch_hub/res/app_colors.dart';
 import 'package:ch_hub/res/assets_path.dart';
 import 'package:ch_hub/res/strings_utils.dart';
@@ -18,7 +19,8 @@ class StartPage extends StatelessWidget {
       backgroundColor: AppColor.backgroundColor,
       body: SafeArea(
         child: Container(
-          decoration: const BoxDecoration(image: DecorationImage(image: AssetImage(AssetsPath.spalsh))),
+          decoration: const BoxDecoration(
+              image: DecorationImage(image: AssetImage(AssetsPath.spalsh))),
           child: Center(
             child: Column(
               children: [
@@ -45,29 +47,32 @@ class StartPage extends StatelessWidget {
                   fontSize: SizeUtils.fSize_16(),
                 ),
                 SizedBox(
-                  height: SizeUtils.verticalBlockSize * 2,
+                  height: SizeUtils.verticalBlockSize * 4,
                 ),
-                BannerAds(),
-                SizedBox(
-                  height: SizeUtils.verticalBlockSize * 2,
-                ),
-                GestureDetector(
-                  onTap: () {
-                    AdsUtils.showInterstitialAds();
-
-                    Navigation.replace(Routes.homePage);
-                  },
-                  child: Container(
-                    decoration: BoxDecoration(color: AppColor.blueContainer, borderRadius: BorderRadius.circular(15)),
-                    child: Padding(
-                      padding: EdgeInsets.symmetric(
-                        horizontal: SizeUtils.horizontalBlockSize * 15,
-                        vertical: SizeUtils.verticalBlockSize * 1.5,
-                      ),
-                      child: AppText(
-                        "START",
-                        color: AppColor.white,
-                        fontSize: SizeUtils.fSize_16(),
+                FullBannerAds(),
+                Spacer(),
+                Padding(
+                  padding: EdgeInsets.only(
+                      bottom: SizeUtils.horizontalBlockSize * 15),
+                  child: GestureDetector(
+                    onTap: () {
+                      AdsUtils.showInterstitialAds();
+                      Navigation.replace(Routes.homePage);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: AppColor.blueContainer,
+                          borderRadius: BorderRadius.circular(15)),
+                      child: Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: SizeUtils.horizontalBlockSize * 15,
+                          vertical: SizeUtils.verticalBlockSize * 1.5,
+                        ),
+                        child: AppText(
+                          "START",
+                          color: AppColor.white,
+                          fontSize: SizeUtils.fSize_16(),
+                        ),
                       ),
                     ),
                   ),
