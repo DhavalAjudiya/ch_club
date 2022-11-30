@@ -1,12 +1,12 @@
-
 import 'package:fluttertoast/fluttertoast.dart';
 
 class AppToast {
   static void toastMessage(String message) {
     Fluttertoast.showToast(
-        msg: message,
-        toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.BOTTOM,
-        fontSize:16);
+      msg: message,
+      toastLength: Toast.LENGTH_SHORT,
+      gravity: ToastGravity.BOTTOM,
+      fontSize: 16,
+    );
   }
 }

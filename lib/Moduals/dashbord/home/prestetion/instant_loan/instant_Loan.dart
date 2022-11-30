@@ -50,83 +50,53 @@ class InstantLoanPage extends StatelessWidget {
                   height: SizeUtils.verticalBlockSize * 10,
                 ),
                 typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.personalLoan);
-                  },
                   text: "Active UNA",
-                  image: AssetsPath.personal,
+                  image: AssetsPath.una,
                   id: 1,
                 ),
                 typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.homeLoan);
-                  },
                   text: "Balance Online",
-                  image: AssetsPath.personal,
+                  image: AssetsPath.balanceOnline,
                   id: 2,
                 ),
                 typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.businessLoan);
-                  },
                   text: "Pensioner",
-                  image: AssetsPath.personal,
+                  image: AssetsPath.pensioner,
                   id: 3,
                 ),
                 typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.educationLoan);
-                  },
                   text: "TRRN Status",
-                  image: AssetsPath.personal,
+                  image: AssetsPath.trrnS,
                   id: 4,
                 ),
                 typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.carLoan);
-                  },
                   text: "News",
-                  image: AssetsPath.personal,
+                  image: AssetsPath.news,
                   id: 5,
                 ),
                 typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.goldLoan);
-                  },
                   text: "Helpline",
-                  image: AssetsPath.personal,
+                  image: AssetsPath.helpline,
                   id: 6,
                 ),
                 typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.aadharLoanPage);
-                  },
                   text: "Balance (SMS)",
-                  image: AssetsPath.personal,
+                  image: AssetsPath.balance,
                   id: 7,
                 ),
                 typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.panLoanPage);
-                  },
                   text: "FAQ",
-                  image: AssetsPath.personal,
+                  image: AssetsPath.faq,
                   id: 8,
                 ),
                 typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.creditCardPage);
-                  },
                   text: "EPF Online",
-                  image: AssetsPath.personal,
+                  image: AssetsPath.epfOnline,
                   id: 9,
                 ),
                 typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.bikePage);
-                  },
                   text: "Locate Office",
-                  image: AssetsPath.personal,
+                  image: AssetsPath.locateOffice,
                   id: 10,
                 ),
               ],
@@ -147,7 +117,12 @@ class InstantLoanPage extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(bottom: SizeUtils.horizontalBlockSize * 3),
       child: GestureDetector(
-        onTap: onTap,
+        onTap: () {
+          Navigation.pushNamed(
+            Routes.instantLoanDetails,
+            arg: {"id": id},
+          );
+        },
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(8),
@@ -162,7 +137,7 @@ class InstantLoanPage extends StatelessWidget {
               children: [
                 Image.asset(
                   image,
-                  width: SizeUtils.horizontalBlockSize * 12,
+                  width: SizeUtils.horizontalBlockSize * 15,
                   // color: AppColor.white,
                 ),
                 SizedBox(

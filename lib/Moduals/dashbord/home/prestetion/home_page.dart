@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:ch_hub/res/app_colors.dart';
 import 'package:ch_hub/res/assets_path.dart';
 import 'package:ch_hub/res/strings_utils.dart';
@@ -12,128 +14,136 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColor.backgroundColor,
-      body: SafeArea(
-        child: Padding(
-          padding: EdgeInsets.only(
-            left: SizeUtils.horizontalBlockSize * 3.5,
-            right: SizeUtils.horizontalBlockSize * 3.5,
-            top: SizeUtils.horizontalBlockSize * 2,
-          ),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                AppText(
-                  AppString.cashHub,
-                  fontWeight: FontWeight.w600,
-                  color: Colors.white,
-                  fontSize: SizeUtils.fSize_25(),
-                ),
-                SizedBox(
-                  height: SizeUtils.horizontalBlockSize * 60,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    return WillPopScope(
+      onWillPop: () {
+        exit(0);
+      },
+      child: Scaffold(
+        backgroundColor: AppColor.backgroundColor,
+        body: SafeArea(
+          child: Container(
+            decoration: const BoxDecoration(image: DecorationImage(image: AssetImage(AssetsPath.spalsh))),
+            child: Padding(
+              padding: EdgeInsets.only(
+                left: SizeUtils.horizontalBlockSize * 3.5,
+                right: SizeUtils.horizontalBlockSize * 3.5,
+                top: SizeUtils.horizontalBlockSize * 2,
+              ),
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    GestureDetector(
+                    AppText(
+                      AppString.cashHub,
+                      fontWeight: FontWeight.w600,
+                      color: Colors.white,
+                      fontSize: SizeUtils.fSize_25(),
+                    ),
+                    SizedBox(
+                      height: SizeUtils.horizontalBlockSize * 60,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigation.pushNamed(Routes.adharCard);
+                          },
+                          child: Image.asset(
+                            AssetsPath.adharLoan,
+                            width: SizeUtils.horizontalBlockSize * 45,
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigation.pushNamed(Routes.instantLoan);
+                          },
+                          child: Image.asset(
+                            AssetsPath.instantLoan,
+                            width: SizeUtils.horizontalBlockSize * 45,
+                          ),
+                        ),
+                        // headerContainer(
+                        //   color: AppColor.blueContainer,
+                        //   image: AssetsPath.adhar,
+                        //   text: AppString.adharCardLoan,
+                        //   isChange: true,
+                        // ),
+                        // headerContainer(
+                        //   color: AppColor.orangContainer,
+                        //   image: AssetsPath.intsLoan,
+                        //   text: AppString.instanstLoan,
+                        //   isChange: true,
+                        // ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: SizeUtils.horizontalBlockSize * 7,
+                    ),
+                    typeContainer(
+                      width: SizeUtils.horizontalBlockSize * 6.5,
+                      image: AssetsPath.loanGuid,
+                      text: AppString.loanGuid,
+                      gradient: const LinearGradient(
+                        colors: [AppColor.loanGuid, AppColor.loanGuid2],
+                      ),
                       onTap: () {
-                        Navigation.pushNamed(Routes.adharCard);
+                        Navigation.pushNamed(Routes.loanGuidePage);
                       },
-                      child: Image.asset(
-                        AssetsPath.adharLoan,
-                        width: SizeUtils.horizontalBlockSize * 45,
+                    ),
+                    typeContainer(
+                      onTap: () {
+                        Navigation.pushNamed(Routes.epsService);
+                      },
+                      width: SizeUtils.horizontalBlockSize * 7,
+                      image: AssetsPath.eps,
+                      text: AppString.eps,
+                      gradient: const LinearGradient(
+                        colors: [AppColor.eps, AppColor.eps2],
                       ),
                     ),
-                    GestureDetector(
+                    typeContainer(
                       onTap: () {
-                        Navigation.pushNamed(Routes.instantLoan);
+                        Navigation.pushNamed(Routes.loanTypePage);
                       },
-                      child: Image.asset(
-                        AssetsPath.instantLoan,
-                        width: SizeUtils.horizontalBlockSize * 45,
+                      width: SizeUtils.horizontalBlockSize * 8,
+                      image: AssetsPath.intsLoan,
+                      text: AppString.loanType,
+                      gradient: const LinearGradient(
+                        colors: [AppColor.loanType, AppColor.loanType2],
                       ),
                     ),
-                    // headerContainer(
-                    //   color: AppColor.blueContainer,
-                    //   image: AssetsPath.adhar,
-                    //   text: AppString.adharCardLoan,
-                    //   isChange: true,
-                    // ),
-                    // headerContainer(
-                    //   color: AppColor.orangContainer,
-                    //   image: AssetsPath.intsLoan,
-                    //   text: AppString.instanstLoan,
-                    //   isChange: true,
-                    // ),
+                    typeContainer(
+                      onTap: () {
+                        Navigation.pushNamed(Routes.bankHolidayPage);
+                      },
+                      width: SizeUtils.horizontalBlockSize * 11,
+                      image: AssetsPath.beach,
+                      text: AppString.bankHoliday,
+                      gradient: const LinearGradient(
+                        colors: [AppColor.bankHolioday, AppColor.bankHolioday2],
+                      ),
+                    ),
+                    typeContainer(
+                      onTap: () {},
+                      width: SizeUtils.horizontalBlockSize * 7,
+                      image: AssetsPath.bank,
+                      text: AppString.bankInfo,
+                      gradient: const LinearGradient(
+                        colors: [AppColor.bankinfo, AppColor.bankinfo2],
+                      ),
+                    ),
+                    typeContainer(
+                      width: SizeUtils.horizontalBlockSize * 7,
+                      image: AssetsPath.location,
+                      text: AppString.nearBy,
+                      gradient: const LinearGradient(
+                        colors: [AppColor.near, AppColor.near2],
+                      ),
+                    ),
                   ],
                 ),
-                SizedBox(
-                  height: SizeUtils.horizontalBlockSize * 7,
-                ),
-                typeContainer(
-                  width: SizeUtils.horizontalBlockSize * 6.5,
-                  image: AssetsPath.loanGuid,
-                  text: AppString.loanGuid,
-                  gradient: const LinearGradient(
-                    colors: [AppColor.loanGuid, AppColor.loanGuid2],
-                  ),
-                  onTap: () {
-                    Navigation.pushNamed(Routes.loanGuidePage);
-                  },
-                ),
-                typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.epsService);
-                  },
-                  width: SizeUtils.horizontalBlockSize * 7,
-                  image: AssetsPath.eps,
-                  text: AppString.eps,
-                  gradient: const LinearGradient(
-                    colors: [AppColor.eps, AppColor.eps2],
-                  ),
-                ),
-                typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.loanTypePage);
-                  },
-                  width: SizeUtils.horizontalBlockSize * 8,
-                  image: AssetsPath.intsLoan,
-                  text: AppString.loanType,
-                  gradient: const LinearGradient(
-                    colors: [AppColor.loanType, AppColor.loanType2],
-                  ),
-                ),
-                typeContainer(
-                  onTap: () {
-                    Navigation.pushNamed(Routes.bankHolidayPage);
-                  },
-                  width: SizeUtils.horizontalBlockSize * 11,
-                  image: AssetsPath.beach,
-                  text: AppString.bankHoliday,
-                  gradient: const LinearGradient(
-                    colors: [AppColor.bankHolioday, AppColor.bankHolioday2],
-                  ),
-                ),
-                typeContainer(
-                  onTap: () {},
-                  width: SizeUtils.horizontalBlockSize * 7,
-                  image: AssetsPath.bank,
-                  text: AppString.bankInfo,
-                  gradient: const LinearGradient(
-                    colors: [AppColor.bankinfo, AppColor.bankinfo2],
-                  ),
-                ),
-                typeContainer(
-                  width: SizeUtils.horizontalBlockSize * 7,
-                  image: AssetsPath.location,
-                  text: AppString.nearBy,
-                  gradient: const LinearGradient(
-                    colors: [AppColor.near, AppColor.near2],
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
         ),
@@ -169,7 +179,7 @@ class HomePage extends StatelessWidget {
             AppText(
               text,
               color: AppColor.white,
-              fontSize: SizeUtils.fSize_17(),
+              fontSize: SizeUtils.fSize_18(),
             ),
           ],
         ));
@@ -189,8 +199,7 @@ class HomePage extends StatelessWidget {
         onTap: onTap,
         child: Container(
           height: SizeUtils.verticalBlockSize * 7,
-          decoration: BoxDecoration(
-              gradient: gradient, borderRadius: BorderRadius.circular(8)),
+          decoration: BoxDecoration(gradient: gradient, borderRadius: BorderRadius.circular(8)),
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: SizeUtils.horizontalBlockSize * 4,

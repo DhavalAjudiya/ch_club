@@ -5,6 +5,7 @@ import 'package:ch_hub/Moduals/dashbord/home/prestetion/bank_holiday/bank_holida
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/bank_holiday/holiday_info.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/home_page.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/instant_loan/instant_Loan.dart';
+import 'package:ch_hub/Moduals/dashbord/home/prestetion/instant_loan/instant_loan_details.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_guid/loan_gide.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_guid/loan_guide_details.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_type/adhar_loan/aadhar_loan.dart';
@@ -56,6 +57,7 @@ mixin Routes {
   static const String splashPage = "/splashPage";
   static const String adharCard = "/adharCard";
   static const String instantLoan = "/instantLoan";
+  static const String instantLoanDetails = "/instantLoanDetails";
 
   static List<GetPage<dynamic>> routes = [
     GetPage<dynamic>(
@@ -186,6 +188,11 @@ mixin Routes {
     GetPage<dynamic>(
       name: instantLoan,
       page: () => InstantLoanPage(),
+      transition: defaultTransition,
+    ),
+    GetPage<dynamic>(
+      name: instantLoanDetails,
+      page: () => InstantLoanDetails(),
       transition: defaultTransition,
     ),
   ];

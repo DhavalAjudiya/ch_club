@@ -1,5 +1,3 @@
-import 'package:bot_toast/bot_toast.dart';
-import 'package:ch_hub/helper/app_snackbar.dart';
 import 'package:ch_hub/helper/toast_helper.dart';
 import 'package:ch_hub/res/app_colors.dart';
 import 'package:ch_hub/res/strings_utils.dart';
@@ -9,10 +7,9 @@ import 'package:ch_hub/widget/app_text.dart';
 import 'package:clipboard/clipboard.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
 
-class EPSServiceDetails extends StatelessWidget {
-  EPSServiceDetails({Key? key}) : super(key: key);
+class InstantLoanDetails extends StatelessWidget {
+  InstantLoanDetails({Key? key}) : super(key: key);
   var id;
 
   @override
@@ -45,7 +42,7 @@ class EPSServiceDetails extends StatelessWidget {
                       width: SizeUtils.horizontalBlockSize * 2,
                     ),
                     AppText(
-                      AppString.eps,
+                      AppString.instantLoand,
                       color: AppColor.white,
                       fontSize: SizeUtils.fSize_24(),
                       fontWeight: FontWeight.bold,
@@ -54,32 +51,6 @@ class EPSServiceDetails extends StatelessWidget {
                 ),
                 SizedBox(
                   height: SizeUtils.verticalBlockSize * 10,
-                ),
-                AppText(
-                  id["id"] == 1
-                      ? AppString.establishment
-                      : id["id"] == 2
-                          ? AppString.key
-                          : id["id"] == 3
-                              ? AppString.umang
-                              : id["id"] == 4
-                                  ? AppString.ecr
-                                  : id["id"] == 5
-                                      ? AppString.online
-                                      : id["id"] == 6
-                                          ? AppString.e
-                                          : id["id"] == 7
-                                              ? AppString.sharam
-                                              : id["id"] == 8
-                                                  ? AppString.personal
-                                                  : id["id"] == 9
-                                                      ? AppString.instanstLoan
-                                                      : AppString.eKyc,
-                  fontSize: SizeUtils.fSize_18(),
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white,
                 ),
                 Padding(
                   padding: EdgeInsets.only(
@@ -98,24 +69,24 @@ class EPSServiceDetails extends StatelessWidget {
                       ),
                       child: AppText(
                         id["id"] == 1
-                            ? AppString.establishmentRegistration
+                            ? AppString.activeUna
                             : id["id"] == 2
-                                ? AppString.kycUpdation
+                                ? AppString.balanceOnline
                                 : id["id"] == 3
-                                    ? AppString.umangUmang
+                                    ? AppString.pensioners
                                     : id["id"] == 4
-                                        ? AppString.ecrReturns
+                                        ? AppString.TEEN
                                         : id["id"] == 5
-                                            ? AppString.onlineClaims
+                                            ? AppString.news
                                             : id["id"] == 6
-                                                ? AppString.ePassbookr
+                                                ? AppString.helpline
                                                 : id["id"] == 7
-                                                    ? AppString.sharamsuvidha
+                                                    ? AppString.balance_sms
                                                     : id["id"] == 8
-                                                        ? AppString.personalPortal
+                                                        ? AppString.FAQ
                                                         : id["id"] == 9
-                                                            ? AppString.internationalWorkers
-                                                            : AppString.eKycPortal,
+                                                            ? AppString.epfOnline
+                                                            : AppString.locateOffice,
                         fontSize: SizeUtils.fSize_12(),
                         maxLines: 80,
                         overflow: TextOverflow.ellipsis,
@@ -144,24 +115,24 @@ class EPSServiceDetails extends StatelessWidget {
                         children: [
                           AppText(
                             id["id"] == 1
-                                ? AppString.establishmentLink
+                                ? AppString.activeUnaLink
                                 : id["id"] == 2
-                                    ? AppString.kycLink
+                                    ? AppString.balanceOnlineLink
                                     : id["id"] == 3
-                                        ? AppString.umangLink
+                                        ? AppString.pensionersLink
                                         : id["id"] == 4
-                                            ? AppString.ecrLink
+                                            ? AppString.TEENLinkLink
                                             : id["id"] == 5
-                                                ? AppString.onlineLink
+                                                ? AppString.newsLink
                                                 : id["id"] == 6
-                                                    ? AppString.eLink
+                                                    ? AppString.helplineLink
                                                     : id["id"] == 7
-                                                        ? AppString.sharamLink
+                                                        ? AppString.balance_smsLink
                                                         : id["id"] == 8
-                                                            ? AppString.personalLink
+                                                            ? AppString.FAQLink
                                                             : id["id"] == 9
-                                                                ? AppString.internationalLink
-                                                                : AppString.eKycLink,
+                                                                ? AppString.epfOnlineLink
+                                                                : AppString.locateOfficeLink,
                             fontSize: SizeUtils.fSize_14(),
                             maxLines: 5,
                             overflow: TextOverflow.ellipsis,
@@ -209,13 +180,6 @@ class EPSServiceDetails extends StatelessWidget {
     );
   }
 
-  Future<void> _launchUrl(String url) async {
-    final Uri urls = Uri.parse(url);
-    if (!await launchUrl(urls)) {
-      throw "Could not launch $urls";
-    }
-  }
-
   Future<void> _copyUrl(String url) async {
     FlutterClipboard.copy(url).then(
       (val) => AppToast.toastMessage("Copy Successfully"),
@@ -225,28 +189,28 @@ class EPSServiceDetails extends StatelessWidget {
   Future<void>? urlLauncher({int? index}) {
     switch (index) {
       case 1:
-        return _copyUrl(AppString.establishmentLink);
+        return _copyUrl(AppString.activeUnaLink);
 
       case 2:
-        return _copyUrl(AppString.kycLink);
+        return _copyUrl(AppString.balanceOnlineLink);
 
       case 3:
-        return _copyUrl(AppString.umangLink);
+        return _copyUrl(AppString.pensionersLink);
 
       case 4:
-        return _copyUrl(AppString.ecrLink);
+        return _copyUrl(AppString.TEENLinkLink);
       case 5:
-        return _copyUrl(AppString.onlineLink);
+        return _copyUrl(AppString.newsLink);
       case 6:
-        return _copyUrl(AppString.eLink);
+        return _copyUrl(AppString.helplineLink);
       case 7:
-        return _copyUrl(AppString.sharamLink);
+        return _copyUrl(AppString.balance_smsLink);
       case 8:
-        return _copyUrl(AppString.personalLink);
+        return _copyUrl(AppString.FAQLink);
       case 9:
-        return _copyUrl(AppString.internationalLink);
+        return _copyUrl(AppString.epfOnlineLink);
       case 10:
-        return _copyUrl(AppString.eKycLink);
+        return _copyUrl(AppString.locateOfficeLink);
     }
   }
 }

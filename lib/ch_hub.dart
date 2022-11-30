@@ -6,11 +6,13 @@ import 'package:ch_hub/utils/navigation_utils/routes.dart';
 import 'package:ch_hub/utils/size_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 
 class CHCLUB extends StatelessWidget {
-  const CHCLUB({Key? key}) : super(key: key);
+  CHCLUB({Key? key}) : super(key: key);
 
+  // AdController adController = Get.put(AdController())..getAdsData();
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(

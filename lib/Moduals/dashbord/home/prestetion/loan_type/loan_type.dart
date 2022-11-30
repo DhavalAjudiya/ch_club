@@ -62,7 +62,7 @@ class LoanTypePage extends StatelessWidget {
                     Navigation.pushNamed(Routes.homeLoan);
                   },
                   text: AppString.home,
-                  image: AssetsPath.personal,
+                  image: AssetsPath.home,
                   id: 2,
                 ),
                 typeContainer(
@@ -70,7 +70,7 @@ class LoanTypePage extends StatelessWidget {
                     Navigation.pushNamed(Routes.businessLoan);
                   },
                   text: AppString.business,
-                  image: AssetsPath.personal,
+                  image: AssetsPath.business,
                   id: 3,
                 ),
                 typeContainer(
@@ -78,7 +78,7 @@ class LoanTypePage extends StatelessWidget {
                     Navigation.pushNamed(Routes.educationLoan);
                   },
                   text: AppString.education,
-                  image: AssetsPath.personal,
+                  image: AssetsPath.education,
                   id: 4,
                 ),
                 typeContainer(
@@ -86,7 +86,7 @@ class LoanTypePage extends StatelessWidget {
                     Navigation.pushNamed(Routes.carLoan);
                   },
                   text: AppString.car,
-                  image: AssetsPath.personal,
+                  image: AssetsPath.car,
                   id: 5,
                 ),
                 typeContainer(
@@ -94,7 +94,7 @@ class LoanTypePage extends StatelessWidget {
                     Navigation.pushNamed(Routes.goldLoan);
                   },
                   text: AppString.gold,
-                  image: AssetsPath.personal,
+                  image: AssetsPath.gold,
                   id: 6,
                 ),
                 typeContainer(
@@ -102,7 +102,7 @@ class LoanTypePage extends StatelessWidget {
                     Navigation.pushNamed(Routes.aadharLoanPage);
                   },
                   text: AppString.aadhar,
-                  image: AssetsPath.personal,
+                  image: AssetsPath.Aadhar,
                   id: 7,
                 ),
                 typeContainer(
@@ -110,7 +110,7 @@ class LoanTypePage extends StatelessWidget {
                     Navigation.pushNamed(Routes.panLoanPage);
                   },
                   text: AppString.pan,
-                  image: AssetsPath.personal,
+                  image: AssetsPath.pan,
                   id: 8,
                 ),
                 typeContainer(
@@ -118,7 +118,7 @@ class LoanTypePage extends StatelessWidget {
                     Navigation.pushNamed(Routes.creditCardPage);
                   },
                   text: AppString.credit,
-                  image: AssetsPath.personal,
+                  image: AssetsPath.creditCard,
                   id: 9,
                 ),
                 typeContainer(
@@ -126,7 +126,7 @@ class LoanTypePage extends StatelessWidget {
                     Navigation.pushNamed(Routes.bikePage);
                   },
                   text: AppString.bike,
-                  image: AssetsPath.personal,
+                  image: AssetsPath.bike,
                   id: 10,
                 ),
               ],
@@ -162,7 +162,7 @@ class LoanTypePage extends StatelessWidget {
               children: [
                 Image.asset(
                   image,
-                  width: SizeUtils.horizontalBlockSize * 12,
+                  width: SizeUtils.horizontalBlockSize * 15,
                   // color: AppColor.white,
                 ),
                 SizedBox(

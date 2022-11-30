@@ -29,35 +29,38 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
       body: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: EdgeInsets.only(bottom: SizeUtils.horizontalBlockSize * 8),
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: SizeUtils.verticalBlockSize * 30,
-                ),
-                Image.asset(
-                  AssetsPath.main,
-                  width: SizeUtils.horizontalBlockSize * 35,
-                ),
-                SizedBox(
-                  height: SizeUtils.horizontalBlockSize * 5,
-                ),
-                AppText(
-                  AppString.ch,
-                  fontWeight: FontWeight.bold,
-                  color: AppColor.white,
-                  fontSize: SizeUtils.fSize_35(),
-                ),
-                Spacer(),
-                JumpingDotsProgressIndicator(
-                  fontSize: SizeUtils.fSize_55(),
-                  numberOfDots: 5,
-                  color: AppColor.bankinfo2,
-                ),
-              ],
+        child: Container(
+          decoration: BoxDecoration(image: DecorationImage(image: AssetImage(AssetsPath.spalsh))),
+          child: Center(
+            child: Padding(
+              padding: EdgeInsets.only(bottom: SizeUtils.horizontalBlockSize * 8),
+              child: Column(
+                // mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: SizeUtils.verticalBlockSize * 30,
+                  ),
+                  Image.asset(
+                    AssetsPath.main,
+                    width: SizeUtils.horizontalBlockSize * 35,
+                  ),
+                  SizedBox(
+                    height: SizeUtils.horizontalBlockSize * 5,
+                  ),
+                  AppText(
+                    AppString.ch,
+                    fontWeight: FontWeight.bold,
+                    color: AppColor.white,
+                    fontSize: SizeUtils.fSize_35(),
+                  ),
+                  Spacer(),
+                  JumpingDotsProgressIndicator(
+                    fontSize: SizeUtils.fSize_55(),
+                    numberOfDots: 5,
+                    color: AppColor.bankinfo2,
+                  ),
+                ],
+              ),
             ),
           ),
         ),
