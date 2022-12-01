@@ -3,6 +3,7 @@ import 'package:ch_hub/Moduals/dashbord/home/prestetion/EPS_service/eps.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/EPS_service/eps_details.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/bank_holiday/bank_holiday.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/bank_holiday/holiday_info.dart';
+import 'package:ch_hub/Moduals/dashbord/home/prestetion/bank_info/Bank_Info.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/home_page.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/instant_loan/instant_Loan.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/instant_loan/instant_loan_details.dart';
@@ -58,6 +59,7 @@ mixin Routes {
   static const String adharCard = "/adharCard";
   static const String instantLoan = "/instantLoan";
   static const String instantLoanDetails = "/instantLoanDetails";
+  static const String bankInfoPage = "/bankInfoPage";
 
   static List<GetPage<dynamic>> routes = [
     GetPage<dynamic>(
@@ -193,6 +195,11 @@ mixin Routes {
     GetPage<dynamic>(
       name: instantLoanDetails,
       page: () => InstantLoanDetails(),
+      transition: defaultTransition,
+    ),
+    GetPage<dynamic>(
+      name: bankInfoPage,
+      page: () => BankInfoPage(),
       transition: defaultTransition,
     ),
   ];

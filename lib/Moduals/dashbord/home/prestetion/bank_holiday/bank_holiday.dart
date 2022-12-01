@@ -12,6 +12,7 @@ class BankHolidayPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("BankHolidayPage----BankHolidayPage");
     return Scaffold(
       backgroundColor: AppColor.backgroundColor,
       body: SafeArea(
@@ -46,7 +47,6 @@ class BankHolidayPage extends StatelessWidget {
                     ),
                   ],
                 ),
-                const Spacer(),
                 Padding(
                   padding: EdgeInsets.only(
                     top: SizeUtils.horizontalBlockSize * 5,

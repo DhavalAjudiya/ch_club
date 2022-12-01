@@ -24,8 +24,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: AppColor.backgroundColor,
         body: SafeArea(
           child: Container(
-            decoration: const BoxDecoration(
-                image: DecorationImage(image: AssetImage(AssetsPath.spalsh))),
+            decoration: const BoxDecoration(image: DecorationImage(image: AssetImage(AssetsPath.spalsh))),
             child: Padding(
               padding: EdgeInsets.only(
                 left: SizeUtils.horizontalBlockSize * 3.5,
@@ -43,8 +42,7 @@ class HomePage extends StatelessWidget {
                       fontSize: SizeUtils.fSize_25(),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(
-                          vertical: SizeUtils.horizontalBlockSize * 4),
+                      padding: EdgeInsets.symmetric(vertical: SizeUtils.horizontalBlockSize * 4),
                       child: SizedBox(
                         height: SizeUtils.verticalBlockSize * 25,
                         child: const Center(child: FullBannerAds()),
@@ -55,7 +53,10 @@ class HomePage extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
+                            print("show -- showInterstitialAds--1-");
                             AdsUtils.showInterstitialAds();
+                            print("show -- showInterstitialAds--2-");
+
                             Navigation.pushNamed(Routes.adharCard);
                           },
                           child: Image.asset(
@@ -144,7 +145,11 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     typeContainer(
-                      onTap: () {},
+                      onTap: () {
+                        AdsUtils.showInterstitialAds();
+
+                        Navigation.pushNamed(Routes.bankInfoPage);
+                      },
                       width: SizeUtils.horizontalBlockSize * 7,
                       image: AssetsPath.bank,
                       text: AppString.bankInfo,
@@ -222,8 +227,7 @@ class HomePage extends StatelessWidget {
         onTap: onTap,
         child: Container(
           height: SizeUtils.verticalBlockSize * 7,
-          decoration: BoxDecoration(
-              gradient: gradient, borderRadius: BorderRadius.circular(8)),
+          decoration: BoxDecoration(gradient: gradient, borderRadius: BorderRadius.circular(8)),
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: SizeUtils.horizontalBlockSize * 4,

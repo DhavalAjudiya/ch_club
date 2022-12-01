@@ -30,16 +30,19 @@ class AdvertisementController extends GetxController {
         adsmodel.value = Adsmodel.fromDocumentSnapshot(element);
         // onBoardingModalList.value.add(onBoardingModal.value);
         // print("element-----------1-${onBoardingModalList.value.first.businessName}");
+        bool advertisementType = getInterstitialType('facebook');
         AdConstants.bannerAdsId = adsmodel.value.bannerId!;
         AdConstants.interstitialId = adsmodel.value.interstitialId!;
         AdConstants.appOpenAdsId = adsmodel.value.appOpenAdsId!;
         AdConstants.faceBookBannerAdsId = adsmodel.value.faceBookBannerId!;
         AdConstants.faceBookInterstitialId = adsmodel.value.faceBookInterstitialId!;
         AdConstants.faceBookTestId = adsmodel.value.faceBookTestId!;
-        FacebookAudienceNetwork.init(
-          testingId: adsmodel.value.faceBookTestId!,
-          iOSAdvertiserTrackingEnabled: true,
-        );
+        AdConstants.adShowDelayed = int.parse(adsmodel.value.secondCountDown!);
+        AdConstants.adShowCount = int.parse(adsmodel.value.firstCountDown!);
+        AdConstants.isShowAdsOrNot = adsmodel.value.adsShowOrNot!;
+        AdConstants.isShowFacebookBannerAds = advertisementType;
+        AdConstants.isShowFacebookInterstitialAds = advertisementType;
+
         print("adMobBannerId--------${AdConstants.bannerAdsId}");
         print("adMobInterId--------${AdConstants.interstitialId}");
         print("adMobOpenId--------${AdConstants.appOpenAdsId}");
@@ -53,6 +56,14 @@ class AdvertisementController extends GetxController {
         print('docsOfModel--------8');
       });
     });
+  }
+
+  static bool getInterstitialType(String? interstitialTypeName) {
+    bool isFacebookAds = false;
+    if (interstitialTypeName != null) {
+      isFacebookAds = interstitialTypeName == 'facebook' ? true : false;
+    }
+    return isFacebookAds;
   }
 
   void appInForGroundOrBackGround() {

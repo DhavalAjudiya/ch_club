@@ -1,5 +1,8 @@
 import 'dart:developer';
 
+import 'package:ch_hub/res/app_colors.dart';
+import 'package:ch_hub/utils/size_utils.dart';
+import 'package:ch_hub/widget/app_text.dart';
 import 'package:facebook_audience_network/facebook_audience_network.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
@@ -66,10 +69,9 @@ class _FullBannerAdsState extends State<FullBannerAds> {
     if (AdConstants.isShowAdsOrNot == true) {
       if (FullBannerAds.isLoaded) {
         print('isShowAdsOrNot----isLoaded-${FullBannerAds.isLoaded}');
-        print(
-            'isShowAdsOrNot----isShowFacebookBannerAds----${AdConstants.isShowFacebookBannerAds}');
+        print('isShowAdsOrNot----isShowFacebookBannerAds----${AdConstants.isShowFacebookBannerAds}');
         if (isAdError == true) {
-          print("Facebook Banner Ad Loaded:");
+          print("Admob Banner Ad Loaded:   ${FullBannerAds.isLoaded}");
           return Container(
             width: _ad!.size.width.toDouble(),
             height: _ad!.size.height.toDouble(),
@@ -88,15 +90,16 @@ class _FullBannerAdsState extends State<FullBannerAds> {
                   bannerSize: BannerSize.LARGE,
                   listener: (result, value) {
                     switch (result) {
+                      case BannerAdResult.LOADED:
+                        print("Facebook Banner Ad Loaded  2: $value");
+                        break;
                       case BannerAdResult.ERROR:
                         print("Facebook Banner Ad Error: $value");
                         setState(() {
                           isAdError = true;
                         });
                         break;
-                      case BannerAdResult.LOADED:
-                        print("Facebook Banner Ad Loaded: $value");
-                        break;
+
                       case BannerAdResult.CLICKED:
                         print("Facebook Banner Ad Clicked: $value");
                         break;

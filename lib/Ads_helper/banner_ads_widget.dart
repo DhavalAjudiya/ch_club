@@ -84,6 +84,7 @@ class _BannerAdsState extends State<BannerAds> {
                 alignment: Alignment(0.5, 1),
                 child: FacebookBannerAd(
                   placementId: AdConstants.faceBookBannerAdsId,
+                  // placementId: "IMG_16_9_APP_INSTALL#2312433698835503_2964944860251047",
                   bannerSize: BannerSize.STANDARD,
                   listener: (result, value) {
                     switch (result) {

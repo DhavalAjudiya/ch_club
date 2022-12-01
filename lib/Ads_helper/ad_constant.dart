@@ -1,8 +1,6 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-
 class AdConstants {
   // static int firstCoolDown = 20;
-  // static int secondCoolDown = 40;
+  // static int adShowCoolDown = 40;
 
   /// for banner Add
   static int id = 0;
@@ -12,11 +10,11 @@ class AdConstants {
   static bool isForGround = true;
 
   static String facebookInterstitialAdUnitId = "";
-  static bool isShowFacebookInterstitialAds = true;
-  static bool isShowAdsOrNot = true;
-
   static String facebookBannerAdUnitId = "";
-  static bool isShowFacebookBannerAds = false;
+
+  // static bool isShowAdsOrNot = true;
+  // static bool isShowFacebookInterstitialAds = true;
+  // static bool isShowFacebookBannerAds = true;
 
   ///
 
@@ -34,4 +32,10 @@ class AdConstants {
   static String faceBookBannerAdsId = "";
   static String faceBookInterstitialId = '';
   static String faceBookTestId = '';
+  static int adShowDelayed = 0;
+  static int adShowCount = 0;
+  static bool adShowOnDelayedOrCount = false;
+  static bool isShowAdsOrNot = true;
+  static bool isShowFacebookInterstitialAds = true;
+  static bool isShowFacebookBannerAds = true;
 }

@@ -1,7 +1,4 @@
-import 'dart:async';
-
 import 'package:facebook_audience_network/facebook_audience_network.dart';
-import 'package:get/get.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 import 'ad_constant.dart';
@@ -21,8 +18,10 @@ class AdsUtils {
 
   static bool isFacebookInterstitialAdLoaded = false;
   static bool isReadyToShowAd = true;
+
   // static bool firstAdShowDelayed = true;
   static int _numInterstitialLoadAttempts = 0;
+  static int interstitialAdShow = 0;
   static bool isAdIsRewarded = false;
   static late RewardedAd rewardAd;
 
@@ -30,8 +29,7 @@ class AdsUtils {
     if (AdConstants.isShowAdsOrNot == true) {
       print("loadInterstitialAds--------1-${AdConstants.isShowAdsOrNot}");
       if (AdConstants.isShowFacebookInterstitialAds) {
-        print(
-            "loadInterstitialAds--------2-${AdConstants.isShowFacebookInterstitialAds}");
+        print("loadInterstitialAds--------2-${AdConstants.isShowFacebookInterstitialAds}");
 
         loadFacebookAd("FacebookInterstitialAds");
       } else {
@@ -121,45 +119,33 @@ class AdsUtils {
   // }
 
   static showInterstitialAds() {
-    if (isReadyToShowAd && adMobInterstitialAd != null) {
-      print(
-          "isReadyToShowAd--------ad----$isReadyToShowAd---$adMobInterstitialAd}");
-      adMobInterstitialAd!.fullScreenContentCallback =
-          FullScreenContentCallback(
-        onAdShowedFullScreenContent: (InterstitialAd ad) =>
-            print('ad onAdShowedFullScreenContent.'),
-        onAdDismissedFullScreenContent: (InterstitialAd ad) {
-          ad.dispose();
-          loadInterstitialAds();
-        },
-        onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
-          print('$ad onAdFailedToShowFullScreenContent: $error');
-          ad.dispose();
-          loadInterstitialAds();
-        },
-      );
-      adMobInterstitialAd!.show();
-      adMobInterstitialAd = null;
-      isReadyToShowAd = false;
-      // Future.delayed(
-      //   Duration(seconds: AdConstants.secondCoolDown),
-      //       () {
-      //     isReadyToShowAd = true;
-      //   },
-      // );
-    } else if (isReadyToShowAd && isFacebookInterstitialAdLoaded) {
-      print(
-          "isReadyToShowAd--------fb----$isReadyToShowAd---$isFacebookInterstitialAdLoaded}");
-
-      FacebookInterstitialAd.showInterstitialAd();
-      isReadyToShowAd = false;
-      // Future.delayed(
-      //   Duration(seconds: AdConstants.secondCoolDown),
-      //       () {
-      //     isReadyToShowAd = true;
-      //   },
-      // );
-    } else {}
+    if (interstitialAdShow == AdConstants.adShowCount || interstitialAdShow == 0) {
+      interstitialAdShow = 0;
+      if (isReadyToShowAd && adMobInterstitialAd != null) {
+        adMobInterstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
+          onAdShowedFullScreenContent: (InterstitialAd ad) => print('ad onAdShowedFullScreenContent.'),
+          onAdDismissedFullScreenContent: (InterstitialAd ad) {
+            ad.dispose();
+            loadInterstitialAds();
+          },
+          onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
+            print('$ad onAdFailedToShowFullScreenContent: $error');
+            ad.dispose();
+            loadInterstitialAds();
+          },
+        );
+        adMobInterstitialAd!.show();
+        adMobInterstitialAd = null;
+        interstitialAdShow++;
+        isReadyToShowAd = true;
+      } else if (isReadyToShowAd && isFacebookInterstitialAdLoaded) {
+        FacebookInterstitialAd.showInterstitialAd();
+        isReadyToShowAd = true;
+        interstitialAdShow++;
+      } else {}
+    } else {
+      interstitialAdShow++;
+    }
     /* if (!firstAdShowDelayed) {
       if (isReadyToShowAd && adMobInterstitialAd != null) {
         adMobInterstitialAd!.fullScreenContentCallback =
