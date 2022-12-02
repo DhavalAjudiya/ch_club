@@ -24,6 +24,7 @@ import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_type/loan_type.dart
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_type/pan_loan/pan_loan.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_type/pan_loan/pan_loan_detailes.dart';
 import 'package:ch_hub/Moduals/dashbord/home/prestetion/loan_type/personal_loan.dart';
+import 'package:ch_hub/Moduals/dashbord/home/prestetion/near_by/near_by.dart';
 import 'package:ch_hub/Moduals/dashbord/splashpage.dart';
 import 'package:ch_hub/Moduals/dashbord/start.dart';
 import 'package:get/get.dart';
@@ -60,6 +61,7 @@ mixin Routes {
   static const String instantLoan = "/instantLoan";
   static const String instantLoanDetails = "/instantLoanDetails";
   static const String bankInfoPage = "/bankInfoPage";
+  static const String nearByPage = "/nearByPage";
 
   static List<GetPage<dynamic>> routes = [
     GetPage<dynamic>(
@@ -200,6 +202,11 @@ mixin Routes {
     GetPage<dynamic>(
       name: bankInfoPage,
       page: () => BankInfoPage(),
+      transition: defaultTransition,
+    ),
+    GetPage<dynamic>(
+      name: nearByPage,
+      page: () => NearByPage(),
       transition: defaultTransition,
     ),
   ];

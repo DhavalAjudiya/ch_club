@@ -158,7 +158,11 @@ class HomePage extends StatelessWidget {
                       ),
                     ),
                     typeContainer(
-                      onTap: () {},
+                      onTap: () {
+                        AdsUtils.showInterstitialAds();
+
+                        Navigation.pushNamed(Routes.nearByPage);
+                      },
                       width: SizeUtils.horizontalBlockSize * 7,
                       image: AssetsPath.location,
                       text: AppString.nearBy,
