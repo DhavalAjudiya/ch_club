@@ -1,4 +1,4 @@
-import 'package:ch_hub/Ads_helper/banner_ads_widget.dart';
+import 'package:ch_hub/Ads_helper/ads/banner_ads_widget.dart';
 import 'package:ch_hub/res/app_colors.dart';
 import 'package:ch_hub/res/strings_utils.dart';
 import 'package:ch_hub/utils/navigation_utils/navigation.dart';
@@ -53,7 +53,7 @@ class LoanGuidePage extends StatelessWidget {
                   ),
                   child: SizedBox(
                     height: SizeUtils.verticalBlockSize * 8,
-                    child: BannerAds(),
+                    child: const BannerAds(),
                   ),
                 ),
                 // SizedBox(
@@ -124,7 +124,6 @@ class LoanGuidePage extends StatelessWidget {
       child: GestureDetector(
         onTap: () {
           Navigation.pushNamed(Routes.loanGuidDetails, arg: {"id": id});
-          print("id----------$id");
         },
         child: Container(
           height: SizeUtils.verticalBlockSize * 9,

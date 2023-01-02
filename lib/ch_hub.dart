@@ -12,7 +12,8 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 class CHCLUB extends StatelessWidget {
   CHCLUB({Key? key}) : super(key: key);
 
-  // AdController adController = Get.put(AdController())..getAdsData();
+  // AdController adController = Get.put(AdController())..setAdsData();
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(

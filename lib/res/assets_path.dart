@@ -9,6 +9,7 @@ class AssetsPath {
   static const String appIcons = 'assets/icons/';
   static const String adhar = '${appIcons}adhar.png';
   static const String spalsh = '${appIcons}spleshbg.png';
+  static const String spalshS = '${appIcons}splash.jpg';
   static const String intsLoan = '${appIcons}ints_loan.png';
   static const String bank = '${appIcons}bank.png';
   static const String beach = '${appIcons}beach.png';
@@ -47,4 +48,13 @@ class AssetsPath {
   static const String loanGuidM = '${appIcons}bt_loan_guide.png';
   static const String loanTy = '${appIcons}bt_loan_type.png';
   static const String nearBy = '${appIcons}bt_near_by.png';
+  static const String cash = '${appIcons}cash.png';
+  static const String ic10 = '${appIcons}ic_10.png';
+  static const String ic20 = '${appIcons}ic_20.png';
+  static const String ic50 = '${appIcons}ic_50.png';
+  static const String ic100 = '${appIcons}ic_100.png';
+  static const String ic200 = '${appIcons}ic_200.png';
+  static const String ic500 = '${appIcons}ic_500.png';
+  static const String ic2000 = '${appIcons}ic_2000.png';
+  static const String ruppy = '${appIcons}ruppe.png';
 }

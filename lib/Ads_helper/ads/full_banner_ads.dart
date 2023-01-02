@@ -1,13 +1,11 @@
 import 'dart:developer';
 
-import 'package:ch_hub/res/app_colors.dart';
 import 'package:ch_hub/utils/size_utils.dart';
-import 'package:ch_hub/widget/app_text.dart';
 import 'package:facebook_audience_network/facebook_audience_network.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import 'ad_constant.dart';
+import '../ad_constant.dart';
 
 class FullBannerAds extends StatefulWidget {
   static bool isLoaded = false;
@@ -40,7 +38,6 @@ class _FullBannerAdsState extends State<FullBannerAds> {
   }
 
   void adsFunction() {
-    print('banner ads--${AdConstants.bannerAdsId}');
     _ad = BannerAd(
       size: AdSize.mediumRectangle,
       adUnitId: AdConstants.bannerAdsId,
@@ -60,21 +57,23 @@ class _FullBannerAdsState extends State<FullBannerAds> {
       ),
       request: const AdRequest(),
     );
+    _ad?.load();
+  }
+
+  @override
+  void dispose() {
+    _ad?.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    print('isShowAdsOrNot-----${AdConstants.isShowAdsOrNot}');
-
     if (AdConstants.isShowAdsOrNot == true) {
       if (FullBannerAds.isLoaded) {
-        print('isShowAdsOrNot----isLoaded-${FullBannerAds.isLoaded}');
-        print('isShowAdsOrNot----isShowFacebookBannerAds----${AdConstants.isShowFacebookBannerAds}');
         if (isAdError == true) {
-          print("Admob Banner Ad Loaded:   ${FullBannerAds.isLoaded}");
           return Container(
             width: _ad!.size.width.toDouble(),
-            height: _ad!.size.height.toDouble(),
+            height: SizeUtils.verticalBlockSize * 35,
             alignment: Alignment.center,
             child: AdWidget(
               ad: _ad!,
@@ -83,11 +82,36 @@ class _FullBannerAdsState extends State<FullBannerAds> {
         }
         return AdConstants.isShowFacebookBannerAds
             ? Container(
-                height: 60,
+                height: SizeUtils.verticalBlockSize * 35,
                 alignment: Alignment(0.5, 1),
-                child: FacebookBannerAd(
+                child: FacebookNativeAd(
+                  placementId: AdConstants.faceBookNativeAdsId,
+                  // placementId: "IMG_16_9_APP_INSTALL#2312433698835503_2964953543583512",
+                  adType: NativeAdType.NATIVE_AD_VERTICAL,
+                  height: SizeUtils.verticalBlockSize * 35,
+                  bannerAdSize: NativeBannerAdSize.HEIGHT_120,
+                  width: double.infinity,
+                  isMediaCover: true,
+                  backgroundColor: Colors.blue,
+                  titleColor: Colors.white,
+                  descriptionColor: Colors.white,
+                  buttonColor: Colors.deepPurple,
+                  buttonTitleColor: Colors.white,
+                  buttonBorderColor: Colors.white,
+                  listener: (result, value) {
+                    print("Native Banner Ad: $result --> $value");
+                    if (result == NativeAdResult.ERROR &&
+                        value["invalidated"] == true) {
+                      print("Native Ad----fb--:2 -->$value--<");
+                    }
+                  },
+                  keepExpandedWhileLoading: true,
+                  keepAlive: true,
+                  expandAnimationDuraion: 1000,
+                ),
+                /*   child: FacebookBannerAd(
                   placementId: AdConstants.faceBookBannerAdsId,
-                  bannerSize: BannerSize.LARGE,
+                  bannerSize: BannerSize.MEDIUM_RECTANGLE,
                   listener: (result, value) {
                     switch (result) {
                       case BannerAdResult.LOADED:
@@ -108,7 +132,7 @@ class _FullBannerAdsState extends State<FullBannerAds> {
                         break;
                     }
                   },
-                ),
+                ),*/
               )
             : Container(
                 width: _ad!.size.width.toDouble(),

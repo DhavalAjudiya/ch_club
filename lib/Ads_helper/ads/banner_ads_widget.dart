@@ -4,7 +4,7 @@ import 'package:facebook_audience_network/facebook_audience_network.dart';
 import 'package:flutter/material.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import 'ad_constant.dart';
+import '../ad_constant.dart';
 
 class BannerAds extends StatefulWidget {
   static bool isLoaded = false;
@@ -61,17 +61,12 @@ class _BannerAdsState extends State<BannerAds> {
 
   @override
   Widget build(BuildContext context) {
-    print('isShowAdsOrNot-----${AdConstants.isShowAdsOrNot}');
-
     if (AdConstants.isShowAdsOrNot == true) {
       if (BannerAds.isLoaded) {
-        print('isShowAdsOrNot----isLoaded-${BannerAds.isLoaded}');
-        print('isShowAdsOrNot----isShowFacebookBannerAds----${AdConstants.isShowFacebookBannerAds}');
         if (isAdError == true) {
-          print("Facebook Banner Ad Loaded:");
           return Container(
             width: _ad!.size.width.toDouble(),
-            height: _ad!.size.height.toDouble(),
+            height: 50,
             alignment: Alignment.center,
             child: AdWidget(
               ad: _ad!,
@@ -80,7 +75,7 @@ class _BannerAdsState extends State<BannerAds> {
         }
         return AdConstants.isShowFacebookBannerAds
             ? Container(
-                height: 60,
+                height: 50,
                 alignment: Alignment(0.5, 1),
                 child: FacebookBannerAd(
                   placementId: AdConstants.faceBookBannerAdsId,
@@ -98,10 +93,8 @@ class _BannerAdsState extends State<BannerAds> {
                         print("Facebook Banner Ad Loaded: $value");
                         break;
                       case BannerAdResult.CLICKED:
-                        print("Facebook Banner Ad Clicked: $value");
                         break;
                       case BannerAdResult.LOGGING_IMPRESSION:
-                        print("Facebook Banner Ad Logging Impression: $value");
                         break;
                     }
                   },
@@ -109,7 +102,7 @@ class _BannerAdsState extends State<BannerAds> {
               )
             : Container(
                 width: _ad!.size.width.toDouble(),
-                height: _ad!.size.height.toDouble(),
+                height: 50,
                 alignment: Alignment.center,
                 child: AdWidget(
                   ad: _ad!,
@@ -119,7 +112,7 @@ class _BannerAdsState extends State<BannerAds> {
         return const SizedBox();
       }
     } else {
-      return SizedBox();
+      return const SizedBox();
     }
   }
 }

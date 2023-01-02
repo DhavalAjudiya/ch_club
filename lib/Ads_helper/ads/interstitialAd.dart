@@ -1,14 +1,10 @@
+import 'package:ch_hub/Ads_helper/ad_constant.dart';
 import 'package:facebook_audience_network/facebook_audience_network.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import 'ad_constant.dart';
-
 const int maxFailedLoadAttempts = 3;
 
-class AdsUtils {
-  // static SplashScreenController splashScreenController = Get.find();
-
-  // static DashBoardController dashBoardController = Get.find();
+class InterstitialAdClass {
   static InterstitialAd? adMobInterstitialAd;
   static const AdRequest request = AdRequest(
     keywords: <String>['foo', 'bar'],
@@ -27,10 +23,7 @@ class AdsUtils {
 
   static void loadInterstitialAds() async {
     if (AdConstants.isShowAdsOrNot == true) {
-      print("loadInterstitialAds--------1-${AdConstants.isShowAdsOrNot}");
       if (AdConstants.isShowFacebookInterstitialAds) {
-        print("loadInterstitialAds--------2-${AdConstants.isShowFacebookInterstitialAds}");
-
         loadFacebookAd("FacebookInterstitialAds");
       } else {
         loadAdMobAd("AdMobInterstitialAds");
@@ -59,9 +52,9 @@ class AdsUtils {
             loadInterstitialAds();
             break;
           case InterstitialAdResult.ERROR:
-            isFacebookInterstitialAdLoaded = false;
             if (adsType != "AdMobInterstitialAds") {
               loadAdMobAd("FacebookInterstitialAds");
+              print('InterstitialAdResult error');
             }
             break;
           default:
@@ -76,7 +69,6 @@ class AdsUtils {
       request: request,
       adLoadCallback: InterstitialAdLoadCallback(
         onAdLoaded: (InterstitialAd ad) {
-          print('InterstitialAd loaded $ad ');
           adMobInterstitialAd = ad;
           _numInterstitialLoadAttempts = 0;
           // if(Utils.firstTimeAdShow) {
@@ -85,7 +77,6 @@ class AdsUtils {
           // }
         },
         onAdFailedToLoad: (LoadAdError error) {
-          print('InterstitialAd failed to load: $error.');
           if (adsType != "FacebookInterstitialAds") {
             loadFacebookAd("AdMobInterstitialAds");
           }
@@ -119,22 +110,27 @@ class AdsUtils {
   // }
 
   static showInterstitialAds() {
-    if (interstitialAdShow == AdConstants.adShowCount || interstitialAdShow == 0) {
+    if (interstitialAdShow == AdConstants.adShowCount ||
+        interstitialAdShow == 0) {
       interstitialAdShow = 0;
       if (isReadyToShowAd && adMobInterstitialAd != null) {
-        adMobInterstitialAd!.fullScreenContentCallback = FullScreenContentCallback(
-          onAdShowedFullScreenContent: (InterstitialAd ad) => print('ad onAdShowedFullScreenContent.'),
+        adMobInterstitialAd?.fullScreenContentCallback =
+            FullScreenContentCallback(
+          onAdShowedFullScreenContent: (InterstitialAd ad) =>
+              print('ad onAdShowedFullScreenContent.'),
           onAdDismissedFullScreenContent: (InterstitialAd ad) {
             ad.dispose();
             loadInterstitialAds();
           },
-          onAdFailedToShowFullScreenContent: (InterstitialAd ad, AdError error) {
+          onAdFailedToShowFullScreenContent:
+              (InterstitialAd ad, AdError error) {
             print('$ad onAdFailedToShowFullScreenContent: $error');
             ad.dispose();
             loadInterstitialAds();
           },
         );
-        adMobInterstitialAd!.show();
+        adMobInterstitialAd?.show();
+
         adMobInterstitialAd = null;
         interstitialAdShow++;
         isReadyToShowAd = true;
@@ -145,6 +141,8 @@ class AdsUtils {
       } else {}
     } else {
       interstitialAdShow++;
+      // interstitialAdShow = 0;
+
     }
     /* if (!firstAdShowDelayed) {
       if (isReadyToShowAd && adMobInterstitialAd != null) {

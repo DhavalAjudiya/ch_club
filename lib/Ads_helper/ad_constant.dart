@@ -1,7 +1,4 @@
 class AdConstants {
-  // static int firstCoolDown = 20;
-  // static int adShowCoolDown = 40;
-
   /// for banner Add
   static int id = 0;
   static String url = '';
@@ -9,27 +6,14 @@ class AdConstants {
   static bool status = false;
   static bool isForGround = true;
 
-  static String facebookInterstitialAdUnitId = "";
-  static String facebookBannerAdUnitId = "";
-
-  // static bool isShowAdsOrNot = true;
-  // static bool isShowFacebookInterstitialAds = true;
-  // static bool isShowFacebookBannerAds = true;
-
-  ///
-
-  static bool isShowUpdateDialogOrNot = false;
-  static String updateAppVersionCode = '';
-
-  ///
-  // static String appOpenAdsId = 'ca-app-pub-3940256099942544/3419835294';
-  // static String appOpenAdsId = '';
-  // static bool isShowOpenAppAds = FirebaseRemoteConfigUtils.isOpenAdsShowOrNot;
-
   static String bannerAdsId = "";
+  static String privacyPolicy = "";
+  static String appLink = "";
+  static String nativeAdsId = "";
   static String interstitialId = '';
   static String appOpenAdsId = '';
   static String faceBookBannerAdsId = "";
+  static String faceBookNativeAdsId = "";
   static String faceBookInterstitialId = '';
   static String faceBookTestId = '';
   static int adShowDelayed = 0;

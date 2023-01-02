@@ -6,20 +6,24 @@ class AppString {
   static ValueNotifier<int> bottomIndex = ValueNotifier(0);
 
   ///Validator
-  static const String emailRegExp = r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
+  static const String emailRegExp =
+      r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+";
   static const String plzEnterEmail = 'Please enter email';
   static const String enterValidEmail = 'Please enter valid email';
   static const String emptyQuote = '';
   static const String plzEnterPWD = 'Please enter Password';
-  static const String pWDRegExp = r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
-  static const String pWDMustBeUpperLower = 'Password must be Uppercase,Lowercase,digit and specialCharacters';
+  static const String pWDRegExp =
+      r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$';
+  static const String pWDMustBeUpperLower =
+      'Password must be Uppercase,Lowercase,digit and specialCharacters';
 
   static const String cashHub = 'Cash Hub';
   static const String ch = 'CH Loan Adviser';
   static const String adharCARD = 'Aadhar Card Loan';
   static const String instantLoan = 'Instant Loan';
   static const String instantLoand = 'Instant Loan Details';
-  static const String subCh = 'You can get all the detailed information \nabout how to get a personal loan.';
+  static const String subCh =
+      'You can get all the detailed information \nabout how to get a personal loan.';
   static const String loanDetail = 'Loan Details';
   static const String selectState = 'Select State';
   static const String holiday = 'Holiday List';
@@ -35,6 +39,7 @@ class AppString {
   static const String bankHoliday = 'Bank Holidays';
   static const String bankInfo = 'Bank Info';
   static const String nearBy = 'Near By';
+  static const String cash = 'Cash Counter';
 
   static const whatIs = "What is Loan?";
   static const forWhat = "for What purposes can it be used?";
@@ -44,7 +49,8 @@ class AppString {
   static const hoeDo = "How do banks decide on the maximum loan amount";
   static const whatAre = "What are the common rates For Loan";
   static const key = "Key documents required when applying for a loan";
-  static const difference = "Difference between part payment, prepayment and preclosure";
+  static const difference =
+      "Difference between part payment, prepayment and preclosure";
   static const loan = "Loan approval process";
   static const credit = "Credit report and score";
   static const howIS = "How is having a higher credit score beneficial";
@@ -92,14 +98,19 @@ class AppString {
   static const international = "International Workers Portal";
   static const eKyc = "EKYC Portal";
 
-  static const establishmentLink = "https://registration.  shramsuvidha.gov.in/user/login";
-  static const kycLink = " https://unifiedportal-mem.epfindia.gov.in / memberinterface /";
-  static const umangLink = " https://unifiedportal-mem.epfindia.gov.in / memberinterface /";
+  static const establishmentLink =
+      "https://registration.  shramsuvidha.gov.in/user/login";
+  static const kycLink =
+      " https://unifiedportal-mem.epfindia.gov.in / memberinterface /";
+  static const umangLink =
+      " https://unifiedportal-mem.epfindia.gov.in / memberinterface /";
   static const ecrLink = "https://unifiedportal-emp.epfindia.gov.in/epfo/";
   static const onlineLink = "https://epfindia.gov.in/site_en/index.php";
-  static const eLink = " https://passbook.epfindia.gov.in / Member PassBook / Login.jsp";
+  static const eLink =
+      " https://passbook.epfindia.gov.in / Member PassBook / Login.jsp";
   static const sharamLink = "https://return.shramsuvidha.gov.in/user/login";
-  static const personalLink = " https://mis.epfindia.gov.in / Pension PaymentEnquiry  /enquiry.jsp";
+  static const personalLink =
+      " https://mis.epfindia.gov.in / Pension PaymentEnquiry  /enquiry.jsp";
   static const internationalLink = " https://iwi.mpfindia.gov.in/iw/";
   static const eKycLink = " https://iwu.epfindia.gov.in/eKYC/";
 
@@ -158,7 +169,8 @@ class AppString {
   static const aadharLoan16 = "What is e-Aadhar about UIDAI?";
   static const aadharLoan17 = "What is a masked base?";
   static const aadharLoan18 = "What are root devices?";
-  static const aadharLoan19 = "Is the physical copy of Aadhar e-Aadhar equally valid?";
+  static const aadharLoan19 =
+      "Is the physical copy of Aadhar e-Aadhar equally valid?";
   static const aadharLoan1 =
       "Base number  A 12-digit random number issued by the UIDAI to all residents of India after completing the verification process laid down by the authority.  is .  Any person of any age who is a resident of India can voluntarily enroll for obtaining Aadhaar number without any gender distinction.  A person seeking enrollment has to provide the minimum demographic and biometric information during the enrollment process, which is completely cost-free.  A person has to enroll for Aadhaar only once and is distinguished through the D-duplication system, only one Aadhaar is created after D-duplication.  Aadhaar number is authenticated by a cost-effective online method.  It is unique and strong enough to eliminate duplicate and bogus identities and can be used as a basic / primary identity to promote effective delivery, transparency and good governance of various government welfare schemes and services.  It is the only program of its kind across the world in which people of state of the art digital and online identity are being provided free of cost to the people at large for the service delivery work in the country. Sambhavna has the potential to change. Aadhaar number is also devoid of any kind of intelligence and it is not an external outline of people on the basis of caste, religion, income, health and geography.  Aadhaar number is proof of identity, however it does not confer citizenship and domicile rights to Aadhaar number holders. Social and financial inclusion, public sector distribution reforms, fiscal budget management to enhance convenience and provide hassle free governance to the people.  Aadhaar is a strategic policy tool for promotion.  The Aadhaar card can be used as a permanent financial address and to facilitate the financial inclusion of the deprived and weaker sections of the society and hence it is a tool for distributive justice and equality.  Aadhaar Identification platform is one of the major pillars of \"Digital India\" in which a unique identity is provided to every resident of the country.  Base number of  Using this enables the Government of India to reach out to the residents of the country directly for the delivery of various subsidies, benefits and services.";
   static const aadharLoan2 =
@@ -171,16 +183,20 @@ class AppString {
       "Not a valid address proof?  With the help of the validation letter of address sent by UIDAI, residents can still get their address updated in their Aadhaar.";
   static const aadharLoan6 =
       "The Unique Identification Authority of India (UIDAI) is a statutory authority established by the Government of India under the provisions of the Aadhaar (Targeted Delivery of Financial and Other Subsidies, Benefits and Services) Act, 2016 (\"Aadhaar Act, 2016\"), Electronics and Information  Under the Ministry of Technology (MEITY) dated 12 July 2016. Prior to its establishment as a statutory authority, UIDAI was the erstwhile Planning Commission (now NITI Aayog) Gazette Notification no.  A-43011/02/2009 - Admin-1 was functioning as an attached office on 28th January, 2009.  Later, on 12 September 2015, UIDAI was associated with the then Department of Information and Technology (DeitY) by the government by amending the Government Work Allocation Rules. UIDAI was established with a unique identity number called \"Aadhaar\" to all residents of India.  (UID) to provide for (a) elimination of dual and bogus identification and (b) to authenticate and certify it easily and economically. First UID Number A resident of Maharashtra, Nandurbar was released on 29 September 2010.  The Authority has so far provided Aadhaar numbers to more than 120 crore Indian residents. Under the Aadhaar Act 2016, UIDAI Aadhaar enrollment and certification, including the management and operation of all stages of the Aadhaar life cycle, including issuance of Aadhaar numbers and  Responsible for developing policy, procedure and system for conducting authentication and ensuring security of identity information and authentication records. To learn more about UIDAI, please refer to the organizational structure sections of the website";
-  static const aadharLoan7 = "E-Aadhaar is a password protected electronic copy of Aadhaar, digitally signed by a competent officer of UIDAI.";
+  static const aadharLoan7 =
+      "E-Aadhaar is a password protected electronic copy of Aadhaar, digitally signed by a competent officer of UIDAI.";
   static const aadharLoan8 =
       "As per the Aadhaar Act, E-Aadhaar is as valid as a physical copy of Aadhaar for all purposes.  For UIDAI circular on validity of e-Aadhaar, please visit e-Aadhaar.";
-  static const aadharLoan9 = "The Mask Aadhaar option allows you to mask your Aadhaar number in your downloaded Aadhaar.";
+  static const aadharLoan9 =
+      "The Mask Aadhaar option allows you to mask your Aadhaar number in your downloaded Aadhaar.";
 
   /// pan
   static const panLoan11 = "What is PAN?";
   static const panLoan12 = "Who can apply for PAN?";
-  static const panLoan13 = "Who can apply on behalf of minor, insane, foolish, retarded, deas and wards of the court?";
-  static const panLoan14 = "Do I need to apply for a new PAN when I move from one city to another?";
+  static const panLoan13 =
+      "Who can apply on behalf of minor, insane, foolish, retarded, deas and wards of the court?";
+  static const panLoan14 =
+      "Do I need to apply for a new PAN when I move from one city to another?";
   static const panLoan15 = "Can I get more than one PAN?";
   static const panLoan16 = "What should I do if I have more than one PAN?";
   static const panLoan17 =
@@ -347,34 +363,46 @@ class AppString {
   static const december_25_1 = "Fourth Saturday";
 
   /// instant Loan Details
-  static const activeUnaLink = " https://passbook.epfindia.gov.in /MemberPassBook/Login.jsp";
-  static const balanceOnlineLink = "https://passbook.epfindia.gov.in Member PassBook / Login.jsp";
-  static const pensionersLink = "https://mis.epfindia.gov.in / Pension PaymentEnquiry /";
-  static const TEENLinkLink = "https://unifiedportal-epfo.epfindia.gov.in / publicPortal / no - auth / mişReport / home / loadSearchTrrn Home";
+  static const activeUnaLink =
+      " https://passbook.epfindia.gov.in /MemberPassBook/Login.jsp";
+  static const balanceOnlineLink =
+      "https://passbook.epfindia.gov.in Member PassBook / Login.jsp";
+  static const pensionersLink =
+      "https://mis.epfindia.gov.in / Pension PaymentEnquiry /";
+  static const TEENLinkLink =
+      "https://unifiedportal-epfo.epfindia.gov.in / publicPortal / no - auth / mişReport / home / loadSearchTrrn Home";
   static const newsLink =
       " https://news.google.com/news/search/section/q / employee % 20provident % 20fund / employee % 20provident % 20fund ?  hl = en & amp ;  gl = US & amp ;  nedrus";
   static const helplineLink = "1800118005";
   static const balance_smsLink = "7738299899";
   static const FAQLink = "http://pfapp.mypfbalance.com/faq.html";
   static const epfOnlineLink = "https://www.epfindia.gov.in/site_en/KYCS.php";
-  static const locateOfficeLink = "https://www.epfindia.gov.in/site_en/KYCS.php";
-  static const activeUna = "* Go to the EPFO website and click Activate UAN corner of the page.  on the bottom-right \n\n* Key in your UAN, name,"
+  static const locateOfficeLink =
+      "https://www.epfindia.gov.in/site_en/KYCS.php";
+  static const activeUna =
+      "* Go to the EPFO website and click Activate UAN corner of the page.  on the bottom-right \n\n* Key in your UAN, name,"
       " date of birth, mobile number, and the captcha text.  Then click Get Authorization Pin.  \n\n* You will now get a one-time password (OTP) on your mobile number.  Copy it.  \n\n* Verify all the details on the EPFO page, and tick the check-box next to I Agree.  \n\n* Paste the OTP from your phone next to Enter OTP and click Validate OTP and Activate UAN.  \n\n* This will activate your UAN and the password will be sent to your mobile number.  \n\n* You will still need to wait for six hours before you can log in to the EPFO portal to check PF balance.  \n\n* Six hours after activating UAN, you can check PF balance.";
 
-  static const balanceOnline = "* Log in to the EPFO website and click on the Our Services tab • Choose the For Employees option from the drop - "
+  static const balanceOnline =
+      "* Log in to the EPFO website and click on the Our Services tab • Choose the For Employees option from the drop - "
       "down menu .  On the login page , enter the username which is the UAN and password to log in .  \n\n* Once logged in, employees can access their EPF details.  Click on the respective passbook to check your EPF balance with different employers.  ";
 
   static const pensioners =
       "The individual must be a part of the EPF scheme to be eligible for EPS.  The employee does not contribute towards EPS , only the employer does .  o Depending upon the employees age and duration of service, he / she will be able to withdraw the EPS amount, or it can be carried forward to their next job.  In case an individual changes jobs, only the EPF will be transferred to the new employer, the EPS will not be transferred.  \n\n* EPS contributions stay with Employees ' Provident Fund Organization ( EPFO ) if an employee changes his / her job . ";
   static const TEEN =
       "* Go to the Employer Provident Fund site : https://www.epfindia.com Here in the Our Services Section, Click on the link For Employers as shown below.  Now in the Services Section, you can see two link TRRN Query (Up to December, 2016) and EPFO Establishment Search / TRRN Query.  \n\n* Suppose you want to see status of your PF payment for which the challan had been generated before December 2016 then you will have to click the Link TRRN Query ( Upto December , 2016 ) Here you will enter your TRRN no .  and the captcha to see the status of the PF Challan payment as shown .  You can also download the status as a PDF .  Now to see the PF Challan payment status of the Challan prepared after December 2016, you will have to click the link EPFO Establishment Search / TRRN Query in the services section.  After clicking on the link you will see a page as below, where you will have to click on the TRRN Search query link.  Now you can see the page where you have to enter your TRRN along with the Captcha and click on Search button .  Clicking on the search button will provide you the status of the PF Challan with TRRN number you entered along with other information such as Challan generated on , Establishment ID , Establishment Name , Challan Type , Total Members , Amount , Payment Confirmation Bank , CRN , Payment  confirmed on and some more as shown below .  Here you can also click on the Download PDF button on the upper right corner as shown above to download the receipt of payment and status of the PF Challan as shown below to keep for your records .  This is how you can get the Provident Fund payment receipt and status using TRRN number .";
-  static const news = "* Epfo's latest news, breaking news.  of plz Clilck The Button . ";
-  static const helpline = "Helpline number solve your query related EPF by just giving a call on a toll free number 1800118005";
-  static const balance_sms = "Check your PF balance without internet through SMS 7738299899";
+  static const news =
+      "* Epfo's latest news, breaking news.  of plz Clilck The Button . ";
+  static const helpline =
+      "Helpline number solve your query related EPF by just giving a call on a toll free number 1800118005";
+  static const balance_sms =
+      "Check your PF balance without internet through SMS 7738299899";
   static const FAQ =
       "Employees Provident Fund How to Check EPF Balance ?  \n\n* Claim pf status check ?  What is the maximum amount that one can receive as gratuity benefit ?  What is form n ?  What is an e - passbook ?  How to transfer EPF Online?  \n\n* All Question Solution.  plz Clilck The Button . ";
-  static const epfOnline = "* View all Tender Notifications issued by Employees Provident Fund Organization.  Search live eProcurement business "
+  static const epfOnline =
+      "* View all Tender Notifications issued by Employees Provident Fund Organization.  Search live eProcurement business "
       "opportunities available in EPFO Tenders section.  \n\n* Employees Provident Fund Organization Tenders are further filtered by Bid Submission Date , Tender Value , Project Location & Product Category o Get email alert on Tenders from Employees Provident Fund Organization - ( EPFO) . ";
-  static const locateOffice = "of Visit the EPFO website and click on the \"Locate an EPFO Office\" option.  oso alternatively, click on the link"
+  static const locateOffice =
+      "of Visit the EPFO website and click on the \"Locate an EPFO Office\" option.  oso alternatively, click on the link"
       " http: //search.epfoservices.org:81/locate _office / office_location.php to find EPFO offices directly .  \n\n* In case you want to know the EPF office having jurisdiction over address , select the first option .  an Now select your state or union territory from the drop down list and select the district where you want to locate the EPF office.  Results will be displayed containing the details of the regional office and the office under whose administrative control the office is operating .  In case you want to know the jurisdiction of an EPF office, then click on the second option and select the office from the drop down menu and click on the submit button.  The result displayed contains the complete address of the office and e - mail address of concerned authorities .  Results are displayed on the screen mentioning the state , district , jurisdiction area and the jurisdiction status of the office .";
 }

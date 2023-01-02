@@ -1,7 +1,8 @@
 import 'dart:io';
 
-import 'package:ch_hub/Ads_helper/ads_utils.dart';
-import 'package:ch_hub/Ads_helper/full_banner_ads.dart';
+import 'package:ch_hub/Ads_helper/ads/full_banner_ads.dart';
+import 'package:ch_hub/Ads_helper/ads/interstitialAd.dart';
+import 'package:ch_hub/Ads_helper/ads/native_ads.dart';
 import 'package:ch_hub/res/app_colors.dart';
 import 'package:ch_hub/res/assets_path.dart';
 import 'package:ch_hub/res/strings_utils.dart';
@@ -12,7 +13,7 @@ import 'package:ch_hub/widget/app_text.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +25,8 @@ class HomePage extends StatelessWidget {
         backgroundColor: AppColor.backgroundColor,
         body: SafeArea(
           child: Container(
-            decoration: const BoxDecoration(image: DecorationImage(image: AssetImage(AssetsPath.spalsh))),
+            decoration: const BoxDecoration(
+                image: DecorationImage(image: AssetImage(AssetsPath.spalsh))),
             child: Padding(
               padding: EdgeInsets.only(
                 left: SizeUtils.horizontalBlockSize * 3.5,
@@ -42,10 +44,13 @@ class HomePage extends StatelessWidget {
                       fontSize: SizeUtils.fSize_25(),
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(vertical: SizeUtils.horizontalBlockSize * 4),
+                      padding: EdgeInsets.symmetric(
+                          vertical: SizeUtils.horizontalBlockSize * 4),
                       child: SizedBox(
                         height: SizeUtils.verticalBlockSize * 25,
-                        child: const Center(child: FullBannerAds()),
+                        child: Center(
+                          child: NativeAds(),
+                        ),
                       ),
                     ),
                     Row(
@@ -53,9 +58,7 @@ class HomePage extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            print("show -- showInterstitialAds--1-");
-                            AdsUtils.showInterstitialAds();
-                            print("show -- showInterstitialAds--2-");
+                            InterstitialAdClass.showInterstitialAds();
 
                             Navigation.pushNamed(Routes.adharCard);
                           },
@@ -66,7 +69,7 @@ class HomePage extends StatelessWidget {
                         ),
                         GestureDetector(
                           onTap: () {
-                            AdsUtils.showInterstitialAds();
+                            InterstitialAdClass.showInterstitialAds();
 
                             Navigation.pushNamed(Routes.instantLoan);
                           },
@@ -75,18 +78,6 @@ class HomePage extends StatelessWidget {
                             width: SizeUtils.horizontalBlockSize * 45,
                           ),
                         ),
-                        // headerContainer(
-                        //   color: AppColor.blueContainer,
-                        //   image: AssetsPath.adhar,
-                        //   text: AppString.adharCardLoan,
-                        //   isChange: true,
-                        // ),
-                        // headerContainer(
-                        //   color: AppColor.orangContainer,
-                        //   image: AssetsPath.intsLoan,
-                        //   text: AppString.instanstLoan,
-                        //   isChange: true,
-                        // ),
                       ],
                     ),
                     SizedBox(
@@ -100,14 +91,13 @@ class HomePage extends StatelessWidget {
                         colors: [AppColor.loanGuid, AppColor.loanGuid2],
                       ),
                       onTap: () {
-                        AdsUtils.showInterstitialAds();
-
+                        InterstitialAdClass.showInterstitialAds();
                         Navigation.pushNamed(Routes.loanGuidePage);
                       },
                     ),
                     typeContainer(
                       onTap: () {
-                        AdsUtils.showInterstitialAds();
+                        InterstitialAdClass.showInterstitialAds();
 
                         Navigation.pushNamed(Routes.epsService);
                       },
@@ -120,7 +110,7 @@ class HomePage extends StatelessWidget {
                     ),
                     typeContainer(
                       onTap: () {
-                        AdsUtils.showInterstitialAds();
+                        InterstitialAdClass.showInterstitialAds();
 
                         Navigation.pushNamed(Routes.loanTypePage);
                       },
@@ -133,7 +123,7 @@ class HomePage extends StatelessWidget {
                     ),
                     typeContainer(
                       onTap: () {
-                        AdsUtils.showInterstitialAds();
+                        InterstitialAdClass.showInterstitialAds();
 
                         Navigation.pushNamed(Routes.bankHolidayPage);
                       },
@@ -146,7 +136,7 @@ class HomePage extends StatelessWidget {
                     ),
                     typeContainer(
                       onTap: () {
-                        AdsUtils.showInterstitialAds();
+                        InterstitialAdClass.showInterstitialAds();
 
                         Navigation.pushNamed(Routes.bankInfoPage);
                       },
@@ -159,7 +149,20 @@ class HomePage extends StatelessWidget {
                     ),
                     typeContainer(
                       onTap: () {
-                        AdsUtils.showInterstitialAds();
+                        InterstitialAdClass.showInterstitialAds();
+
+                        Navigation.pushNamed(Routes.cashCounter);
+                      },
+                      width: SizeUtils.horizontalBlockSize * 7,
+                      image: AssetsPath.cash,
+                      text: AppString.cash,
+                      gradient: const LinearGradient(
+                        colors: [AppColor.cash2, AppColor.cash],
+                      ),
+                    ),
+                    typeContainer(
+                      onTap: () {
+                        InterstitialAdClass.showInterstitialAds();
 
                         Navigation.pushNamed(Routes.nearByPage);
                       },
@@ -231,7 +234,8 @@ class HomePage extends StatelessWidget {
         onTap: onTap,
         child: Container(
           height: SizeUtils.verticalBlockSize * 7,
-          decoration: BoxDecoration(gradient: gradient, borderRadius: BorderRadius.circular(8)),
+          decoration: BoxDecoration(
+              gradient: gradient, borderRadius: BorderRadius.circular(8)),
           child: Padding(
             padding: EdgeInsets.symmetric(
               horizontal: SizeUtils.horizontalBlockSize * 4,

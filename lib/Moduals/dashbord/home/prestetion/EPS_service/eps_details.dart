@@ -1,5 +1,6 @@
 import 'package:bot_toast/bot_toast.dart';
-import 'package:ch_hub/Ads_helper/banner_ads_widget.dart';
+import 'package:ch_hub/Ads_helper/ads/banner_ads_widget.dart';
+
 import 'package:ch_hub/helper/app_snackbar.dart';
 import 'package:ch_hub/helper/toast_helper.dart';
 import 'package:ch_hub/res/app_colors.dart';

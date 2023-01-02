@@ -20,4 +20,6 @@ class AppColor {
   static const bankinfo2 = Color(0xffea292c);
   static const near = Color(0xff027dd5);
   static const near2 = Color(0xff1dd4fe);
+  static const cash = Color(0xffca5dff);
+  static const cash2 = Color(0xff9820ff);
 }

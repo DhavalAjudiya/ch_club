@@ -1,6 +1,8 @@
-import 'package:ch_hub/Ads_helper/ads_utils.dart';
-import 'package:ch_hub/Ads_helper/banner_ads_widget.dart';
-import 'package:ch_hub/Ads_helper/full_banner_ads.dart';
+import 'package:ch_hub/Ads_helper/ads/interstitialAd.dart';
+import 'package:ch_hub/Ads_helper/ads/banner_ads_widget.dart';
+
+import 'package:ch_hub/Ads_helper/ads/full_banner_ads.dart';
+import 'package:ch_hub/Ads_helper/ads/native_ads.dart';
 import 'package:ch_hub/res/app_colors.dart';
 import 'package:ch_hub/res/assets_path.dart';
 import 'package:ch_hub/res/strings_utils.dart';
@@ -49,14 +51,14 @@ class StartPage extends StatelessWidget {
                 SizedBox(
                   height: SizeUtils.verticalBlockSize * 4,
                 ),
-                FullBannerAds(),
-                Spacer(),
+                NativeAds(),
+                const Spacer(),
                 Padding(
                   padding: EdgeInsets.only(
                       bottom: SizeUtils.horizontalBlockSize * 15),
                   child: GestureDetector(
                     onTap: () {
-                      AdsUtils.showInterstitialAds();
+                      InterstitialAdClass.showInterstitialAds();
                       Navigation.replace(Routes.homePage);
                     },
                     child: Container(

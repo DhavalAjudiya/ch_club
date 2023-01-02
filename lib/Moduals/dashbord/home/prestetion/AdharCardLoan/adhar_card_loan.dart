@@ -1,4 +1,4 @@
-import 'package:ch_hub/Ads_helper/full_banner_ads.dart';
+import 'package:ch_hub/Ads_helper/ads/full_banner_ads.dart';
 import 'package:ch_hub/res/app_colors.dart';
 import 'package:ch_hub/res/assets_path.dart';
 import 'package:ch_hub/res/strings_utils.dart';

@@ -4,14 +4,11 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
 
-    <!-- Provide required visibility configuration for API level 30 and above -->
     <queries>
-        <!-- If your app checks for SMS support -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
             <data android:scheme="sms" />
         </intent>
-        <!-- If your app checks for call support -->
         <intent>
             <action android:name="android.intent.action.VIEW" />
             <data android:scheme="tel" />
@@ -20,7 +17,7 @@
    <application
         android:label="ch_hub"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/launcher_icon">
        <meta-data android:name="com.google.android.geo.API_KEY"
            android:value="AIzaSyCL04QksUmF_htT3KZFezNmW6O2m1T6x60"/>
         <activity
@@ -31,10 +28,7 @@
             android:configChanges="orientation|keyboardHidden|keyboard|screenSize|smallestScreenSize|locale|layoutDirection|fontScale|screenLayout|density|uiMode"
             android:hardwareAccelerated="true"
             android:windowSoftInputMode="adjustResize">
-            <!-- Specifies an Android theme to apply to this Activity as soon as
-                 the Android process has started. This theme is visible to the user
-                 while the Flutter UI initializes. After that, this theme continues
-                 to determine the Window background behind the Flutter UI. -->
+
             <meta-data
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"

@@ -1,18 +1,14 @@
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
-import 'ad_constant.dart';
+import '../ad_constant.dart';
 
 class AppOpenAdManager {
-
-
   AppOpenAd? _appOpenAd;
- static bool isShowingAd = false;
+  static bool isShowingAd = false;
   // Datum adsModel = Datum();
 
-
-
   /// Load an AppOpenAd.
-  Future<void> loadAd({required String id}) async{
+  Future<void> loadAd({required String id}) async {
     await AppOpenAd.load(
       adUnitId: "$id",
       orientation: AppOpenAd.orientationPortrait,
@@ -45,9 +41,7 @@ class AppOpenAdManager {
         },
       ),
     );
-
   }
-
 
   void showAdIfAvailable() {
     if (!isAdAvailable) {
@@ -87,12 +81,9 @@ class AppOpenAdManager {
   }
 }
 
-
-
-
 // import 'package:google_mobile_ads/google_mobile_ads.dart';
 //
-// class OpenAppAdsUtils {
+// class OpenAppInterstitialAdClass {
 //
 //  static AppOpenAd? openAd;
 //
